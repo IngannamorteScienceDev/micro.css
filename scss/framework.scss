@@ -1,0 +1,316 @@
+// Config 
+// Подключение переменных, необходимых для генерации классов и значений свойств
+@import "var/var";
+
+// Core
+//Подключение файлов, содержащих основные миксины,
+//генерирующие классы и сброса стилей
+@import "root";
+@import "lite";
+@import "core/background.scss";
+@import "core/border";
+@import "core/box-aligment.scss";
+@import "core/box-sizing.scss";
+@import "core/clear.scss";
+@import "core/container.scss";
+@import "core/display.scss";
+@import "core/flex.scss";
+@import "core/float.scss";
+@import "core/grid.scss";
+@import "core/margin.scss";
+@import "core/opacity.scss";
+@import "core/overflow.scss";
+@import "core/overscroll.scss";
+@import "core/padding.scss";
+@import "core/position.scss";
+@import "core/sizing.scss";
+@import "core/trbl.scss";
+@import "core/typography.scss";
+@import "core/visibility.scss";
+@import "core/z-index.scss";
+@import "core/shadow";
+//В данном месте вызываются миксины, генерирующие необходимые
+//классы
+//например,
+//text-color();
+//при необходимости обработки состояний, стоит продублировать
+//вызов миксина с передачей ему именнованного параметра $states,
+//в который нужно передать спиок необходимых состояний
+//например,
+//text-color($states: ('hover','focus'))
+@include background-attachment();
+@include background-clip();
+@include background-color();
+@include background-opacity();
+@include background-position();
+@include background-repeat();
+@include background-size();
+@include border-radius();
+@include border-width();
+@include border-color();
+@include border-opacity();
+@include border-style();
+@include just-content();
+@include just-items();
+@include just-self();
+@include align-content();
+@include align-items();
+@include align-self();
+@include place-content();
+@include place-items();
+@include place-self();
+@include box-sizing();
+@include clear();
+@include container();
+@include display();
+@include flex();
+@include float();
+@include grid();
+@include margin();
+@include opacity();
+@include overflow();
+@include overscroll();
+@include padding();
+@include position();
+@include width();
+@include min-width();
+@include max-width();
+@include height();
+@include min-height();
+@include max-height();
+@include trbl();
+@include font-family();
+@include text-color();
+@include text-opacity();
+@include font-size();
+@include line-height();
+@include font-variant-numeric();
+@include font-weight();
+@include letter-spacing();
+@include list-style-type();
+@include list-style-position();
+@include placeholder-color();
+@include placeholder-opacity();
+@include text-align();
+@include text-decoration();
+@include text-transform();
+@include text-vertical-align();
+@include whitespace();
+@include visibility();
+@include z-index();
+@include shadow();
+@include background-attachment($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include background-clip($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include background-color($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include background-opacity($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include background-position($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include background-repeat($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include background-size($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include border-radius($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include border-width($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include border-color($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include border-opacity($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include border-style($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include just-content($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include just-items($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include just-self($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include align-content($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include align-items($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include align-self($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include place-content($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include place-items($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include place-self($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include box-sizing($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include clear($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include container($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include display($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include flex($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include float($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include grid($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include margin($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include opacity($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include overflow($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include overscroll($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include padding($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include position($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include width($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include min-width($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include max-width($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include height($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include min-height($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include max-height($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include trbl($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include font-family($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include text-color($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include text-opacity($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include font-size($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include line-height($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include font-variant-numeric($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include font-weight($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include letter-spacing($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include list-style-type($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include list-style-position($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include placeholder-color($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include placeholder-opacity($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include text-align($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include text-decoration($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include text-transform($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include text-vertical-align($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include whitespace($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include visibility($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include z-index($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+@include shadow($states: ('active', 'disabled', 'enabled', 'focus', 'hover'));
+
+
+//генерация классов container c отзывчивостью на размер экрана
+@each $breakpoint,$value in $breakpoints {
+    @media (min-width: $value){
+        .#{$breakpoint}\:container{
+            width: 100%;
+        }
+        @include container-responsive($breakpoint);
+        //при необходимости обработки состояний нужно продублировать
+        //вызов миксина с дополнительным параметром $states, в который
+        //передается список нужных состояний
+        //например, 
+        //@include container-responsive($breakpoint, 'hover');
+    }
+}
+
+@each $breakpoint,$value in $breakpoints {
+    @media (min-width: $value){
+        //В данном блоке подключаются все необходимые классы
+        //в том случае, если необходима поддержка отзывчивости
+        //на различные размеры экрана
+        //например,
+        //@include box-sizing($breakpoint);
+        //если необходимо также подключить обработку состояний
+        //то стоит продублировать вызов классов с дополнительным параметром
+        //$states, в который нужно передать список из необходимых состояний
+        //например,
+        //@include text-color($breakpoint,('hover','focus'));
+        @include background-attachment($breakpoint);
+        @include background-clip($breakpoint);
+        @include background-color($breakpoint);
+        @include background-opacity($breakpoint);
+        @include background-position($breakpoint);
+        @include background-repeat($breakpoint);
+        @include background-size($breakpoint);
+        @include border-radius($breakpoint);
+        @include border-width($breakpoint);
+        @include border-color($breakpoint);
+        @include border-opacity($breakpoint);
+        @include border-style($breakpoint);
+        @include just-content($breakpoint);
+        @include just-items($breakpoint);
+        @include just-self($breakpoint);
+        @include align-content($breakpoint);
+        @include align-items($breakpoint);
+        @include align-self($breakpoint);
+        @include place-content($breakpoint);
+        @include place-items($breakpoint);
+        @include place-self($breakpoint);
+        @include box-sizing($breakpoint);
+        @include clear($breakpoint);
+        @include container($breakpoint);
+        @include display($breakpoint);
+        @include flex($breakpoint);
+        @include float($breakpoint);
+        @include grid($breakpoint);
+        @include margin($breakpoint);
+        @include opacity($breakpoint);
+        @include overflow($breakpoint);
+        @include overscroll($breakpoint);
+        @include padding($breakpoint);
+        @include position($breakpoint);
+        @include width($breakpoint);
+        @include min-width($breakpoint);
+        @include max-width($breakpoint);
+        @include height($breakpoint);
+        @include min-height($breakpoint);
+        @include max-height($breakpoint);
+        @include trbl($breakpoint);
+        @include font-family($breakpoint);
+        @include text-color($breakpoint);
+        @include text-opacity($breakpoint);
+        @include font-size($breakpoint);
+        @include line-height($breakpoint);
+        @include font-variant-numeric($breakpoint);
+        @include font-weight($breakpoint);
+        @include letter-spacing($breakpoint);
+        @include list-style-type($breakpoint);
+        @include list-style-position($breakpoint);
+        @include placeholder-color($breakpoint);
+        @include placeholder-opacity($breakpoint);
+        @include text-align($breakpoint);
+        @include text-decoration($breakpoint);
+        @include text-transform($breakpoint);
+        @include text-vertical-align($breakpoint);
+        @include whitespace($breakpoint);
+        @include visibility($breakpoint);
+        @include z-index($breakpoint);
+        @include shadow($breakpoint);
+                
+        @include background-attachment($breakpoint,  ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include background-clip($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include background-color($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include background-opacity($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include background-position($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include background-repeat($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include background-size($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include border-radius($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include border-width($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include border-color($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include border-opacity($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include border-style($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include just-content($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include just-items($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include just-self($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include align-content($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include align-items($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include align-self($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include place-content($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include place-items($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include place-self($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include box-sizing($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include clear($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include display($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include flex($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include float($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include grid($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include margin($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include opacity($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include overflow($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include overscroll($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include padding($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include position($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include width($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include min-width($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include max-width($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include height($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include min-height($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include max-height($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include trbl($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include font-family($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include text-color($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include text-opacity($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include font-size($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include line-height($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include font-variant-numeric($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include font-weight($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include letter-spacing($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include list-style-type($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include list-style-position($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include placeholder-color($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include placeholder-opacity($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include text-align($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include text-decoration($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include text-transform($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include text-vertical-align($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include whitespace($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include visibility($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include z-index($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+        @include shadow($breakpoint, ('active', 'disabled', 'enabled', 'focus', 'hover'));
+
+    }
+}

@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="ru">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>micro.css || Demo pages</title>
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <link href="../dist/purge/framework-prefix.css" rel="stylesheet">
+      <style>
+         @import url('https://fonts.googleapis.com/css?family=Lato');
+         html { font-family: 'Lato', sans-serif; }
+      </style>
+   </head>
+   
+   <body class="bg-gray-500 letter-wider letter-normal">
+      <nav id="header" class="fixed w-full z-50 top-0 bg-gray-800 border-b-solid border-b-1 border-gray-800">
+         <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-4">
+            <div class="pl-4 flex items-center">
+               <img class="h-8 pr-3 text-purple-500" src="../logo0.png">
+               <a class="mono text-white font-normal no-underline hover:no-underline font-semibold font-3xl"  href="#"> 
+               micro.css
+               </a>
+            </div>         
+         </div>
+      </nav>
+      <div class="container w-full flex flex-wrap mx-auto px-2 pt-8 lg:pt-16 mt-16">
+         <div class="w-full lg:w-1/5 lg:px-6 text-xl text-gray-800 leading-normal">
+            <p class="text-base font-bold py-2 lg:pb-6 text-gray-700">Menu</p>
+            <div class="block lg:hidden sticky inset-0">
+               <button id="menu-toggle" class="flex w-full justify-end px-3 py-3 bg-white lg:bg-transparent border-solid border-1 border-rd border-gray-600 outline-none:focus">
+                  <svg class="h-3 float-right" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                     <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+                  </svg>
+               </button>
+            </div>
+            <div class="w-full sticky inset-0 hidden h-64 lg:h-auto overflow-x-hidden overflow-y-auto lg:overflow-y-hidden lg:block mt-0 z-20" style="top:5em;" id="menu-content">
+               <ul class="list-none">
+                  <li class="py-2 md:my-0 bg-red-500:hover border-rd border-b-solid border-b-2 border-red-500">
+                     <a href="#" class="block pl-4 align-middle text-gray-700 no-underline">
+                     <span class="pb-1 md:pb-0 text-sm text-gray-900 font-bold"></span>
+                     </a>
+                  </li>
+                  <li class="py-2 md:my-0 bg-red-500:hover font-bold:hover border-rd">
+                     <a href="#" class="block pl-4 align-middle text-gray-700 no-underline">
+                     <span class="pb-1 md:pb-0 text-sm text-gray-900"></span>
+                     </a>
+                  </li>
+                  <li class="py-2 md:my-0 bg-red-500:hover font-bold:hover border-rd">
+                     <a href="#" class="block pl-4 align-middle text-gray-700 no-underline">
+                     <span class="pb-1 md:pb-0 text-sm text-gray-900"></span>
+                     </a>
+                  </li>
+                  <li class="py-2 md:my-0 bg-red-500:hover font-bold:hover border-rd">
+                     <a href="#" class="block pl-4 align-middle text-gray-700 no-underline">
+                     <span class="pb-1 md:pb-0 text-sm text-gray-900"></span>
+                     </a>
+                  </li>
+                  <li class="py-2 md:my-0 bg-red-500:hover font-bold:hover border-rd">
+                     <a href="#" class="block pl-4 align-middle text-gray-700 no-underline">
+                     <span class="pb-1 md:pb-0 text-sm text-gray-900"></span>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+         <div class="w-full bg-gray-400 lg:w-4/5 p-8 mt-6 lg:mt-0 text-gray-900 line-h-normal bg-white border-solid border-1 border-gray-600 border-rd">
+           
+            <div class="sans">
+              <h1 class="sans text-gray-900 font-extrabold pb-2">Примеры использования</h1>
+               <hr class="border-b border-gray-400">
+               <div></div>
+            </div>
+           
+           
+            <div class="border-solid border-1 border-gray-600 my-2 p-2"> 
+               <h2 class="font-bold py-2" id="container">Container</h2>
+               <table class="w-full text-left">
+                  <colgroup>
+                     <col class="w-1/4">
+                     <col class="w-1/4">
+                     <col class="w-1/4">
+                  </colgroup>
+                  <thead>
+                     <tr>
+                        <th class="sticky font-sm font-semibold text-gray-600 p-0">
+                           <div class="pb-2 border-b-solid border-b-1 border-gray-200">Класс</div>
+                        </th>
+                        <th class="sticky font-sm font-semibold text-gray-600 p-0">
+                           <div class="pb-2 border-b-solid border-b-1 border-gray-200">Точка</div>
+                        </th>
+                        <th class="sticky font-sm font-semibold text-gray-600 p-0">
+                           <div class="pb-2 border-b-solid border-b-1 border-gray-200">Свойство</div>
+                        </th>
+                     </tr>
+                  </thead>
+                  <tbody class="align-baseline mono">
+                     <tr>
+                        <td rowspan="6" class="py-2 font-xs whitespace-nowrap v-align-top">container</td>
+                        <td class="py-2 font-xs">none</td>
+                        <td class="py-2 font-xs whitespace-pre">max-width: 100%</td>
+                     </tr>
+                     <tr>
+                        <td class="py-2 font-xs">sm (576px)</td>
+                        <td class="py-2 font-xs whitespace-pre">max-width: 576px;</td>
+                     </tr>
+                     <tr>
+                        <td class="py-2 font-xs">md (768px)</td>
+                        <td class="py-2 font-xs whitespace-pre">max-width: 768px;</td>
+                     </tr>
+                     <tr>
+                        <td class="py-2 font-xs">lg (992px)</td>
+                        <td class="py-2 font-xs whitespace-pre">max-width: 992px;</td>
+                     </tr>
+                     <tr>
+                        <td class="py-2 font-xs">xl (1200px)</td>
+                        <td class="py-2 font-xs whitespace-pre">max-width: 1200px</td>
+                     </tr>
+                     <tr>
+                        <td class="py-2 font-xs">xxl (1400px)</td>
+                        <td class="py-2 font-xs whitespace-pre">max-width: 1400px</td>
+                     </tr>
+                  </tbody>
+               </table>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="container"&gt;
+   ...
+&lt;/div&gt;
+
+&lt;!-- Адаптивный вариант --&gt;
+&lt;div class="sm:container"&gt;
+   ...
+&lt;/div&gt;
+                  </code>
+               </pre>
+            </div>
+
+            <div class="border-solid border-1 border-gray-600 my-2 p-2"> 
+               <h2 class="font-bold py-2" id="box-size">Box Sizing</h2>
+               <table class="w-full text-left">
+                  <thead>
+                     <tr>
+                        <th class="sticky font-sm font-semibold text-gray-600 p-0">
+                           <div class="pb-2 border-b-solid border-b-1 border-gray-200">Класс</div>
+                        </th>
+                        <th class="sticky font-sm font-semibold text-gray-600 p-0">
+                           <div class="pb-2 border-b-solid border-b-1 border-gray-200">Свойство</div>
+                        </th>
+                     </tr>
+                  </thead>
+                  <tbody class="align-baseline mono">
+                     <tr>
+                        <td class="py-2 font-xs">border-box</td>
+                        <td class="py-2 font-xs whitespace-pre">box-sizing: border-box</td>
+                     </tr>
+                     <tr>
+                        <td class="py-2 font-xs">content-box</td>
+                        <td class="py-2 font-xs whitespace-pre">box-sizing: content-box</td>
+                     </tr>
+                  </tbody>
+               </table>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="border-box"&gt;
+   ...
+&lt;/div&gt;
+&lt;div class="content-box"&gt;
+   ...
+&lt;/div&gt;
+
+&lt;!-- Адаптивный вариант --&gt;
+&lt;div class="sm:border-box"&gt;
+   ...
+&lt;/div&gt;
+&lt;div class="sm:content-box"&gt;
+   ...
+&lt;/div&gt;
+
+&lt;!-- Псевдоклассы --&gt;
+&lt;div class="border-box:hover"&gt;
+   ...
+&lt;/div&gt;
+&lt;div class="content-box:focus"&gt;
+   ...
+&lt;/div&gt;
+                  </code>
+               </pre>
+            </div>
+
+            <div class="border-solid border-1 border-gray-600 my-2 p-2"> 
+               <h2 class="font-bold py-2" id="display">Display</h2>
+               <div class="p-4 bg-red-200 border-rd-md">
+                  <span class="block border-rd-md text-white font-extrabold text-center bg-red-400 p-4 my-1">1</span>
+                  <span class="block border-rd-md text-white font-extrabold text-center bg-red-400 p-4 my-1">2</span>
+                  <span class="block border-rd-md text-white font-extrabold text-center bg-red-400 p-4 my-1">3</span>
+               </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div&gt;
+   &lt;div class="block"&gt;1&lt;/div&gt;
+   &lt;div class="block"&gt;2&lt;/div&gt;
+   &lt;div class="block"&gt;3&lt;/div&gt;
+&lt;/div&gt;
+                  </code>
+               </pre>
+               <div class="my-2">
+                  <div class="flow-root my-4 bg-red-200 border-rd-md">
+                     <div class="my-4 text-white font-extrabold text-center bg-red-400 p-6">1</div>
+                  </div>
+                  <div class="flow-root my-4 bg-red-200 border-rd-md">
+                     <div class="my-4 text-white font-extrabold text-center bg-red-400 p-6">2</div>
+                  </div>
+               </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div&gt;
+   &lt;div class="flow-root "&gt;
+      &lt;div&gt;1&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class="flow-root "&gt;
+      &lt;div&gt;2&lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+                  </code>
+               </pre>
+               <div class="p-4 my-2 bg-red-200 border-rd-md">
+                  <div class="mx-2 inline-block border-rd-md text-white font-extrabold text-center bg-red-400 px-6 py-4">1</div>
+                  <div class="mx-2 inline-block border-rd-md text-white font-extrabold text-center bg-red-400 px-6 py-4">2</div>
+                  <div class="mx-2 inline-block border-rd-md text-white font-extrabold text-center bg-red-400 px-6 py-4">3</div>
+               </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div&gt;
+   &lt;div class="inline-block"&gt;
+      1
+   &lt;/div&gt;
+   &lt;div class="inline-block"&gt;
+      2
+   &lt;/div&gt;
+   &lt;div class="inline-block"&gt;
+      3
+   &lt;/div&gt;
+&lt;/div&gt;
+                  </code>
+               </pre>
+               <div class="my-2 py-4">
+                  <div class="my-2 bg-red-200 border-rd-md">
+                     <div class="mx-2 inline border-rd-md text-white font-extrabold text-center bg-red-400 px-6 py-4">1</div>
+                     <div class="mx-2 inline border-rd-md text-white font-extrabold text-center bg-red-400 px-6 py-4">3</div>
+                     <div class="mx-2 inline border-rd-md text-white font-extrabold text-center bg-red-400 px-6 py-4">2</div>
+                  </div>
+               </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div&gt;
+   &lt;div class="inline"&gt;
+      1
+   &lt;/div&gt;
+   &lt;div class="inline"&gt;
+      2
+   &lt;/div&gt;
+   &lt;div class="inline"&gt;
+      3
+   &lt;/div&gt;
+&lt;/div&gt;
+                  </code>
+               </pre>
+               <div class="p-4 my-2 flex bg-red-200 border-rd-md">
+                  <div class="mx-2 flex-1 border-rd-md text-white font-extrabold text-center bg-red-400 p-6">1</div>
+                  <div class="mx-2 flex-1 border-rd-md text-white font-extrabold text-center bg-red-400 p-6">2</div>
+                  <div class="mx-2 flex-1 border-rd-md text-white font-extrabold text-center bg-red-400 p-6">3</div>
+               </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="flex"&gt;
+   &lt;div class="flex-1"&gt;
+      1
+   &lt;/div&gt;
+   &lt;div class="flex-1"&gt;
+      2
+   &lt;/div&gt;
+   &lt;div class="flex-1"&gt;
+      3
+   &lt;/div&gt;
+&lt;/div&gt;
+                  </code>
+               </pre>
+               <div class="p-4 my-2 inline-flex bg-red-200 border-rd-md">
+                  <div class="mx-2 flex-1 border-rd-md text-white font-extrabold text-center bg-red-400 p-6">1</div>
+                  <div class="mx-2 flex-1 border-rd-md text-white font-extrabold text-center bg-red-400 p-6">2</div>
+                  <div class="mx-2 flex-1 border-rd-md text-white font-extrabold text-center bg-red-400 p-6">3</div>
+               </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="inline-flex"&gt;
+   &lt;div class="flex-1"&gt;
+      1
+   &lt;/div&gt;
+   &lt;div class="flex-1"&gt;
+      2
+   &lt;/div&gt;
+   &lt;div class="flex-1"&gt;
+      3
+   &lt;/div&gt;
+&lt;/div&gt;
+                  </code>
+               </pre>
+               <div class="my-2 p-4 grid gap-4 grid-cols-3 bg-red-200 border-rd-md">
+                  <div class="p-4 border-rd-md text-white font-extrabold text-center bg-red-400">1</div>
+                  <div class="p-4 border-rd-md text-white font-extrabold text-center bg-red-400">2</div>
+                  <div class="p-4 border-rd-md text-white font-extrabold text-center bg-red-400">3</div>
+                  <div class="p-4 border-rd-md text-white font-extrabold text-center bg-red-400">4</div>
+                  <div class="p-4 border-rd-md text-white font-extrabold text-center bg-red-400">5</div>
+                  <div class="p-4 border-rd-md text-white font-extrabold text-center bg-red-400">6</div>
+                  <div class="p-4 border-rd-md text-white font-extrabold text-center bg-red-400">7</div>
+                  <div class="p-4 border-rd-md text-white font-extrabold text-center bg-red-400">8</div>
+                  <div class="p-4 border-rd-md text-white font-extrabold text-center bg-red-400">9</div>
+               </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="grid gap-4 grid-cols-3"&gt;
+   ...
+&lt;/div&gt;
+                  </code>
+               </pre>
+               <div class="my-2">
+                  <div class="mx-2 inline-grid grid-cols-3 gap-x-4 p-4 bg-red-200 border-rd-md">
+                     <div class="mx-2 border-rd-md text-white font-extrabold text-center bg-red-400 p-4">1</div>
+                     <div class="mx-2 border-rd-md text-white font-extrabold text-center bg-red-400 p-4">2</div>
+                     <div class="mx-2 border-rd-md text-white font-extrabold text-center bg-red-400 p-4">3</div>
+                  </div>
+                  <div class="mx-2 inline-grid grid-cols-3 gap-x-4 p-4 bg-red-200 border-rd-md">
+                     <div class="mx-2 border-rd-md text-white font-extrabold text-center bg-red-400 p-4">1</div>
+                     <div class="mx-2 border-rd-md text-white font-extrabold text-center bg-red-400 p-4">2</div>
+                     <div class="mx-2 border-rd-md text-white font-extrabold text-center bg-red-400 p-4">3</div>
+                  </div>
+               </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="inline-grid grid-cols-3 gap-x-4"&gt;
+   &lt;div&gt;
+      1
+   &lt;/div&gt;
+   &lt;div&gt;
+      2
+   &lt;/div&gt;
+   &lt;div&gt;
+      3
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="inline-grid grid-cols-3 gap-x-4"&gt;
+   &lt;div&gt;
+      1
+   &lt;/div&gt;
+   &lt;div&gt;
+      2
+   &lt;/div&gt;
+   &lt;div&gt;
+      3
+   &lt;/div&gt;
+&lt;/div&gt;
+                  </code>
+               </pre>
+               <div class="my-2 p-4 flex border-rd-md bg-red-200">
+                  <div class="m-2 flex-1 text-white font-extrabold text-center bg-red-400 border-rd-md p-4">1</div>
+                  <div class="contents">
+                     <div class="flex-1 border-rd-md m-2 text-white font-extrabold text-center bg-red-400 py-4">2</div>
+                     <div class="flex-1 border-rd-md m-2 text-white font-extrabold text-center bg-red-400 py-4">3</div>
+                  </div>
+                  <div class="m-2 flex-1 text-white font-extrabold text-center bg-red-400 border-rd-md p-4">1</div>
+               </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="flex"&gt;
+   &lt;div class="flex-1"&gt;1&lt;/div&gt;
+   &lt;div&gt; class="contents"&gt;
+      &lt;div class="flex-1"&gt;2&lt;/div&gt;
+      &lt;div class="flex-1"&gt;3&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class="flex-1"&gt;4&lt;/div&gt;
+&lt;/div&gt;
+                  </code>
+               </pre>
+               <div class="my-2 table w-full bg-red-200 border-rd-md">
+                  <div class="table-row-group">
+                     <div class="table-row">
+                        <div class="table-cell border-rd-md text-white font-extrabold text-center bg-red-400 p-4">1</div>
+                        <div class="table-cell border-rd-md text-white font-extrabold text-center bg-red-500 p-4">2</div>
+                        <div class="table-cell border-rd-md text-white font-extrabold text-center bg-red-400 p-4">3</div>
+                     </div>
+                     <div class="table-row">
+                        <div class="table-cell border-rd-md text-white font-extrabold text-center bg-red-500 p-4">4</div>
+                        <div class="table-cell border-rd-md text-white font-extrabold text-center bg-red-400 p-4">5</div>
+                        <div class="table-cell border-rd-md text-white font-extrabold text-center bg-red-500 p-4">6</div>
+                     </div>
+                  </div>
+               </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="table w-full "&gt;
+   &lt;div class="table-row-group"&gt;1&lt;/div&gt;
+      &lt;div class="table-row"&gt;
+         &lt;div class="table-cell"&gt;1&lt;/div&gt;
+         &lt;div class="table-cell"&gt;2&lt;/div&gt;
+         &lt;div class="table-cell"&gt;3&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="table-row"&gt;
+         &lt;div class="table-cell"&gt;4&lt;/div&gt;
+         &lt;div class="table-cell"&gt;5&lt;/div&gt;
+         &lt;div class="table-cell"&gt;6&lt;/div&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;               
+&lt;/div&gt;
+                  </code>
+               </pre>
+               <div class="my-2 p-4 flex bg-red-200 border-rd-md">
+                  <div class="mx-2 hidden border-rd-md text-white font-extrabold text-center bg-red-400 p-4">1</div>
+                  <div class="mx-2 border-rd-md text-white font-extrabold text-center bg-red-400 p-4">2</div>
+                  <div class="mx-2 border-rd-md text-white font-extrabold text-center bg-red-400 p-4">3</div>
+               </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="flex"&gt;
+   &lt;div class="hidden"&gt;1&lt;/div&gt;
+   &lt;div"&gt;2&lt;/div&gt;
+   &lt;div"&gt;3&lt;/div&gt;
+&lt;/div&gt;
+                  </code>
+               </pre>
+            </div>
+
+            <div class="border-solid border-1 border-gray-600 my-2 p-2"> 
+               <h2 class="font-bold py-2" id="overflow">Overflow</h2>
+               <div class="h-32">
+                  <div class="my-2 overflow-visible h-16 px-6 py-2 border-rd-md bg-red-200">
+                     <p class="md:w-2/3 lg:w-1/2 text-red-400">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eveniet neque ex, nisi pariatur eos doloremque quos, deleniti incidunt sapiente sequi aspernatur beatae quasi. Animi est blanditiis eligendi in accusantium!
+                     </p>
+                  </div>
+               </div>
+               <pre class="my-2 bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="overflow-visible"&gt;
+   ...
+&lt;/div&gt;
+
+                  </code>
+               </pre>
+               <div class="my-2 overflow-auto h-16 px-6 py-2 border-rd-md bg-red-200">
+                  <p class="text-red-400">
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eveniet neque ex, nisi pariatur eos doloremque quos, deleniti incidunt sapiente sequi aspernatur beatae quasi. Animi est blanditiis eligendi in accusantium!
+                  </p>
+               </div>
+               <pre class="my-2 bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="overflow-auto"&gt;
+   ...
+&lt;/div&gt;
+
+                  </code>
+               </pre>
+               <div class="my-2 overflow-hidden h-32 px-6 py-2 border-rd-md bg-red-200">
+                  <p class="text-red-400">
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eveniet neque ex, nisi pariatur eos doloremque quos, deleniti incidunt sapiente sequi aspernatur beatae quasi. Animi est blanditiis eligendi in accusantium!
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eveniet neque ex, nisi pariatur eos doloremque quos, deleniti incidunt sapiente sequi aspernatur beatae quasi. Animi est blanditiis eligendi in accusantium!
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eveniet neque ex, nisi pariatur eos doloremque quos, deleniti incidunt sapiente sequi aspernatur beatae quasi. Animi est blanditiis eligendi in accusantium!
+                  </p>
+               </div>
+               <pre class="my-2 bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="overflow-hidden"&gt;
+   ...
+&lt;/div&gt;
+
+                  </code>
+               </pre>
+               <div class="my-2 overflow-x-auto h-32 px-6 py-2 border-rd-md bg-red-200">
+                  <p class="text-red-400">
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eveniet neque ex, nisi pariatur eos doloremque quos, deleniti incidunt sapiente sequi aspernatur beatae quasi. Animi est blanditiis eligendi in accusantium!
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eveniet neque ex, nisi pariatur eos doloremque quos, deleniti incidunt sapiente sequi aspernatur beatae quasi. Animi est blanditiis eligendi in accusantium!
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eveniet neque ex, nisi pariatur eos doloremque quos, deleniti incidunt sapiente sequi aspernatur beatae quasi. Animi est blanditiis eligendi in accusantium!
+                  </p>
+               </div>
+               <pre class="my-2 bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="overflow-x-auto"&gt;
+   ...
+&lt;/div&gt;
+
+                  </code>
+               </pre>
+               <div class="my-2 overflow-y-auto h-32 px-6 py-2 border-rd-md bg-red-200">
+                  <p class="text-red-400">
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eveniet neque ex, nisi pariatur eos doloremque quos, deleniti incidunt sapiente sequi aspernatur beatae quasi. Animi est blanditiis eligendi in accusantium!
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eveniet neque ex, nisi pariatur eos doloremque quos, deleniti incidunt sapiente sequi aspernatur beatae quasi. Animi est blanditiis eligendi in accusantium!
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum eveniet neque ex, nisi pariatur eos doloremque quos, deleniti incidunt sapiente sequi aspernatur beatae quasi. Animi est blanditiis eligendi in accusantium!
+                  </p>
+               </div>
+               <pre class="my-2 bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="overflow-y-auto"&gt;
+   ...
+&lt;/div&gt;
+
+                  </code>
+               </pre>
+               <div class="my-2 overflow-x-scroll h-32 px-6 py-2 border-rd-md bg-red-200">
+                  <p class="text-red-400">
+                     Lorem ipsum dolor sit 
+                  </p>
+               </div>
+               <pre class="my-2 bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="overflow-x-scroll"&gt;
+   ...
+&lt;/div&gt;
+
+                  </code>
+               </pre>
+               <div class="my-2 overflow-y-scroll h-32 px-6 py-2 border-rd-md bg-red-200">
+                  <p class="text-red-400">
+                     Lorem ipsum dolor sit 
+                  </p>
+               </div>
+               <pre class="my-2 bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="overflow-y-scroll"&gt;
+   ...
+&lt;/div&gt;
+
+                  </code>
+               </pre>
+               <div class="my-2 overflow-scroll h-32 px-6 py-2 border-rd-md bg-red-200">
+                  <p class="text-red-400">
+                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, assumenda. Dolorum, sequi enim consequatur quia ducimus eius, quidem, sed porro voluptates inventore autem maiores quos voluptatum dicta. Cum, voluptatum voluptas?
+                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, assumenda. Dolorum, sequi enim consequatur quia ducimus eius, quidem, sed porro voluptates inventore autem maiores quos voluptatum dicta. Cum, voluptatum voluptas?
+                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, assumenda. Dolorum, sequi enim consequatur quia ducimus eius, quidem, sed porro voluptates inventore autem maiores quos voluptatum dicta. Cum, voluptatum voluptas?
+                  </p>
+               </div>
+               <pre class="my-2 bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="overflow-scroll"&gt;
+   ...
+&lt;/div&gt;
+
+                  </code>
+               </pre>
+            </div>
+
+            <div class="border-solid border-1 border-gray-600 my-2 p-2"> 
+               <h2 class="font-bold py-2" id="position">Position</h2>
+               <div class="my-2 relative bg-red-100 p-6">
+                  <div class="static h-32 bg-red-200 p-4 text-white font-medium">
+                     <p>Родитель static</p>
+                     <div class="absolute bottom-0 left-0 bg-red-400 p-4 text-white">
+                        <p>Потомок absolute</p>
+                     </div>
+                  </div>
+               </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="static"&gt;
+   ...
+   &lt;div class="absolute bottom-0 left-0"&gt;
+      ...
+   &lt;/div&gt;
+&lt;/div&gt;
+                  </code>
+               </pre>
+               <div class="my-2 relative bg-red-100 p-6">
+                  <div class="relative h-32 bg-red-200 p-4 text-white font-medium">
+                     <p>Родитель</p>
+                     <div class="absolute bottom-0 left-0 bg-red-400 p-4 text-white">
+                        <p>Потомок</p>
+                     </div>
+                  </div>
+               </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="relative"&gt;
+   ...
+   &lt;div class="absolute bottom-0 left-0"&gt;
+      ...
+   &lt;/div&gt;
+&lt;/div&gt;
+                  </code>
+               </pre>
+               <div class="my-2 relative bg-red-100 p-6">
+                  <div class="static h-32 bg-red-200 p-4 text-white font-medium">
+                     <p>Родитель static</p>
+                     <div class="static inline-block bottom-0 left-0 bg-red-400 p-4 text-white">
+                        <p>Потомок</p>
+                     </div>
+                     <div class="bg-red-400 inline-block p-4 text-white">
+                        <p>Потомок</p>
+                     </div>
+                  </div>
+               </div>
+               <div class="my-2 relative bg-red-100 p-6">
+                  <p class="mb-2 text-red-400">Родитель relative</p>
+                  <div class="static bg-red-200 p-4 text-white font-medium">
+                     <p>Родитель static</p>
+                     <div class="absolute top-0 right-0  h-32 bg-red-400 p-4 text-white inline-block">
+                        <p>Потомок</p>
+                     </div>
+                     <div class="bg-red-400 inline-block p-4 text-white">
+                        <p>Потомок</p>
+                     </div>
+                  </div>
+               </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="static"&gt;
+   ...
+   &lt;div class="static"&gt;...&lt;/div&gt;
+   &lt;div class="inline-block"&gt;...&lt;/div&gt;
+   ...
+   &lt;div class="static"&gt;...&lt;/div&gt;
+   &lt;div class="inline-block"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+                  </code>
+               </pre>
+               <div class="my-2 h-64 overflow-auto">
+                  <div>
+                     <div class="sticky top-0 bg-red-300 p-2 font-semibold text-red-500 border-rd-md">Sticky</div>
+                     <p class="py-2  font-semibold text-red-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, culpa ad! Vel voluptate porro doloribus obcaecati, facere dolore minus voluptatum consequuntur perspiciatis molestias reprehenderit nesciunt, error cum vero earum aliquam?</p>
+                  </div>
+                  <div>
+                     <div class="sticky top-0 bg-red-300 p-2 font-semibold text-red-500 border-rd-md">Sticky</div>
+                     <p class="py-2  font-semibold text-red-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, culpa ad! Vel voluptate porro doloribus obcaecati, facere dolore minus voluptatum consequuntur perspiciatis molestias reprehenderit nesciunt, error cum vero earum aliquam?</p>
+                  </div>
+                  <div>
+                     <div class="sticky top-0 bg-red-300 p-2 font-semibold text-red-500 border-rd-md">Sticky</div>
+                     <p class="py-2  font-semibold text-red-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, culpa ad! Vel voluptate porro doloribus obcaecati, facere dolore minus voluptatum consequuntur perspiciatis molestias reprehenderit nesciunt, error cum vero earum aliquam?</p>
+                  </div>
+                  <div>
+                     <div class="sticky top-0 bg-red-300 p-2 font-semibold text-red-500 border-rd-md">Sticky</div>
+                     <p class="py-2  font-semibold text-red-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, culpa ad! Vel voluptate porro doloribus obcaecati, facere dolore minus voluptatum consequuntur perspiciatis molestias reprehenderit nesciunt, error cum vero earum aliquam?</p>
+                  </div>
+                  <div>
+                     <div class="sticky top-0 bg-red-300 p-2 font-semibold text-red-500 border-rd-md">Sticky</div>
+                     <p class="py-2  font-semibold text-red-500">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, culpa ad! Vel voluptate porro doloribus obcaecati, facere dolore minus voluptatum consequuntur perspiciatis molestias reprehenderit nesciunt, error cum vero earum aliquam?</p>
+                  </div>
+               </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div&gt;
+   &lt;div class="sticky top-0"&gt;...&lt;/div&gt;
+   &lt;p&gt;...&lt;/p&gt;
+&lt;/div&gt;
+&lt;div&gt;
+   &lt;div class="sticky top-0"&gt;...&lt;/div&gt;
+   &lt;p&gt;...&lt;/p&gt;
+&lt;/div&gt;
+&lt;div&gt;
+   &lt;div class="sticky top-0"&gt;...&lt;/div&gt;
+   &lt;p&gt;...&lt;/p&gt;
+&lt;/div&gt;
+
+
+                  </code>
+               </pre>
+            </div>
+
+            <div class="border-solid border-1 border-gray-600 my-2 p-2">
+               <h2 class="font-bold py-2" id="z-index">Z-index</h2>
+               <div class="my-2 flex justify-center relative h-32 text-center">
+                  <div class="z-40 relative w-20 h-20 bg-red-400 border border-solid border-red-600 border-rd-md flex justify-center items-center text-white font-2xl font-extrabold">1</div>
+                  <div class="z-30 n-left-4 top-4 relative w-20 h-20 bg-red-400 border border-solid border-red-600 border-rd-md flex justify-center items-center text-white font-2xl font-extrabold" >2</div>
+                  <div class="z-20 n-left-8 top-8 relative w-20 h-20 bg-red-400 border border-solid border-red-600 border-rd-md flex justify-center items-center text-white font-2xl font-extrabold" >3</div>
+                  <div class="z-10 n-left-12 top-12 relative w-20 h-20 bg-red-400 border border-solid border-red-600 border-rd-md flex justify-center items-center text-white font-2xl font-extrabold" >4</div>
+               </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="z-40"&gt;5&lt;/div&gt;
+&lt;div class="z-30"&gt;4&lt;/div&gt;
+&lt;div class="z-20"&gt;3&lt;/div&gt;
+&lt;div class="z-10"&gt;2&lt;/div&gt;
+&lt;div class="z-0"&gt;1&lt;/div&gt;
+                  </code>
+               </pre>
+            </div>
+
+            <div class="border-solid border-1 border-gray-600 my-2 p-2">
+               <h2 class="font-bold py-2" id="flex">Flex</h2>
+               <div class="my-2 flex">
+                  <div class="flex-initial bg-red-400 border-rd-md text-white font-semibold flex items-center justify-center py-3 px-6">Lorem</div>
+                  <div class="flex-initial bg-red-400 border-rd-md text-white font-semibold flex items-center justify-center py-3 px-6">Lorem Ipsum</div>
+               </div>
+               <div class="my-2 flex">
+                  <div class="flex-initial bg-red-400 border-rd-md text-white font-semibold flex items-center justify-center py-3 px-6">Lorem</div>
+                  <div class="flex-initial bg-red-400 border-rd-md text-white font-semibold flex items-center justify-center py-3 px-6">Lorem Ipsum</div>
+                  <div class="flex-initial bg-red-400 border-rd-md text-white font-semibold flex items-center justify-center py-3 px-6">Lorem Ipsum ffdsf gfgdfgdfh fs gdfgdfgdh fhgfjggfjf te rtert rerytytry ert rteytyt Ipsum</div>
+                </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="flex"&gt;
+   &lt;div class="flex-initial"&gt;4&lt;/div&gt;
+   &lt;div class="flex-initial"&gt;3&lt;/div&gt;
+   &lt;div class="flex-initial"&gt;2&lt;/div&gt;
+&lt;/div&gt;
+                  </code>
+               </pre>
+
+               <div class="my-2 flex bg-red-200 flex-row-reverse:hover p-4">
+                  <div class="mx-2 flex-grow border-rd-md text-white font-extrabold font-lg bg-red-400 flex justify-item items-center">1</div>
+                  <div class="mx-2 flex-grow-0 border-rd-md text-white font-extrabold font-lg bg-red-400 flex justify-item items-center">2</div>
+                  <div class="mx-2 flex-grow border-rd-md text-white font-extrabold font-lg bg-red-400 flex justify-item items-center">3</div>
+               </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="flex flex-row-reverse:hover"&gt;
+   &lt;div class="flex-grow"&gt;4&lt;/div&gt;
+   &lt;div class="flex-grow-0"&gt;3&lt;/div&gt;
+   &lt;div class="flex-grow"&gt;2&lt;/div&gt;
+&lt;/div&gt;
+                  </code>
+               </pre>
+            </div>
+
+            <div class="border-solid border-1 border-gray-600 my-2 p-2">
+               <h2 class="font-bold py-2" id="grid">Grid</h2>
+               <div class="my-2 grid grid-cols-6 gap-4">
+                  <div class="bg-red-200 border-rd-md"></div>
+                  <div class="col-start-2 col-span-4 bg-red-400 text-white font-extrabold font-lg flex items-center justify-center border-rd-md">1</div>
+                  <div class="bg-red-200 border-rd-md"></div>
+                  <div class="col-start-1 col-end-3 bg-red-400 text-white font-extrabold font-lg flex items-center justify-center border-rd-md">2</div>
+                  <div class="bg-red-200 border-rd-md"></div>
+                  <div class="bg-red-200 border-rd-md"></div>
+                  <div class="col-end-7 col-span-2 bg-red-400 text-white font-extrabold font-lg flex items-center justify-center border-rd-md">3</div>
+                  <div class="col-start-1 col-end-7 bg-red-400 text-white font-extrabold font-lg flex items-center justify-center border-rd-md">4</div>
+               </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="flex"&gt;
+   &lt;div class="flex-grow"&gt;4&lt;/div&gt;
+   &lt;div class="flex-grow-0"&gt;3&lt;/div&gt;
+   &lt;div class="flex-grow"&gt;2&lt;/div&gt;
+&lt;/div&gt;
+                  </code>
+               </pre>
+            </div>
+
+            <div class="border-solid border-1 border-gray-600 my-2 p-2">
+               <h2 class="font-bold py-2" id="sizing">Sizing</h2>
+               <div class="my-2 flex flex-col mx-auto w-64">
+                  <div class="flex items-center">
+                     <p class="w-12 text-right mx-2">w-8 </p> 
+                     <div class="w-8 h-8 border-rd-md bg-red-400 p-2 my-2"></div>  
+                  </div>
+                  <div class="flex items-center">
+                     <p class="w-12 text-right mx-2">w-12</p> 
+                     <div class="w-12 h-8 border-rd-md bg-red-400 p-2 my-2"></div>  
+                  </div>   
+                  <div class="flex items-center">
+                     <p class="w-12 text-right mx-2">w-16</p> 
+                     <div class="w-16 h-8 border-rd-md bg-red-400 p-2 my-2"></div>  
+                  </div>  
+                  <div class="flex items-center">
+                     <p class="w-12 text-right mx-2">w-24</p> 
+                     <div class="w-24 h-8 border-rd-md bg-red-400 p-2 my-2"></div>  
+                  </div>   
+                  <div class="flex items-center">
+                     <p class="w-12 text-right mx-2">w-32</p> 
+                     <div class="w-32 h-8 border-rd-md bg-red-400 p-2 my-2"></div>  
+                  </div> 
+               </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div&gt;
+   &lt;div class="w-8"&gt;&lt;/div&gt;
+   &lt;div class="w-12"&gt;&lt;/div&gt;
+   &lt;div class="w-16"&gt;&lt;/div&gt;
+&lt;/div&gt;
+                  </code>
+               </pre>
+               <div class="my-2 flex">
+                  <div class="w-1/2 h-8 bg-red-400 text-center text-white font-extrabold py-2 my-2">w-1/2</div>   
+                  <div class="w-1/2 h-8 bg-red-200 text-center text-white font-extrabold py-2 my-2">w-1/2</div> 
+               </div>  
+               <div class="my-2 flex">
+                  <div class="w-1/3 h-8 bg-red-400 text-center text-white font-extrabold py-2 my-2">w-1/3</div>   
+                  <div class="w-2/3 h-8 bg-red-200 text-center text-white font-extrabold py-2 my-2">w-2/3</div> 
+               </div>  
+               <div class="my-2 flex">
+                  <div class="w-2/5 h-8 bg-red-400 text-center text-white font-extrabold py-2 my-2">w-2/5</div>   
+                  <div class="w-3/5 h-8 bg-red-200 text-center text-white font-extrabold py-2 my-2">w-3/5</div> 
+               </div> 
+               <div class="my-2 flex">
+                  <div class="w-1/4 h-8 bg-red-400 text-center text-white font-extrabold py-2 my-2">w-1/4</div>   
+                  <div class="w-3/4 h-8 bg-red-200 text-center text-white font-extrabold py-2 my-2">w-3/4</div> 
+               </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+               <code class="whitespace-pre-wrap">
+&lt;div class="flex"&gt;
+&lt;div class="w-1/2"&gt;w-1/2&lt;/div&gt;
+&lt;div class="w-1/2"&gt;w-1/2&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="flex"&gt;
+&lt;div class="w-1/3"&gt;w-1/3&lt;/div&gt;
+&lt;div class="w-2/3"&gt;w-2/3&lt;/div&gt;
+&lt;/div&gt;
+               </code>
+            </pre>   
+            </div>
+            
+            <div class="border-solid border-1 border-gray-600 my-2 p-2">
+               <h2 class="font-bold py-2" id="typography">Typography</h2>
+               <p class="sans md:serif text-center">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="serif text-center">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="mono text-center">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <pre class="my-2 bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+   &lt;p class="sans sm:serif"&gt;&lt;/p&gt;
+   &lt;p class="serif"&gt;&lt;/p&gt;
+   &lt;p class="mono"&gt;&lt;/p&gt;
+                  </code>
+               </pre>
+               <p class="font-xs">Text XS</p>
+               <p class="font-sm">Text SM</p>
+               <p class="font-normal">Text Normal</p>
+               <p class="font-lg">Text LG</p>
+               <p class="font-xl">Text XL</p>
+               <p class="font-2xl">Text 2XL</p>
+               <p class="font-3xl">Text 3XL</p>
+               <p class="font-4xl">Text 4XL</p>
+               <p class="font-5xl">Text 5XL</p>
+               <p class="font-6xl">Text 6XL</p>
+               <p class="font-7xl">Text 7XL</p>
+               <p class="font-8xl">Text 8XL</p>
+               <p class="font-9xl">Text 9XL</p>
+               <pre class="my-2 bg-gray-900 border-rd text-white font-lg px-4 py-2">
+               <code class="whitespace-pre-wrap">
+&lt;p class="font-xs"&gt;&lt;/p&gt;
+&lt;p class="font-sm"&gt;&lt;/p&gt;
+&lt;p class="font-normal"&gt;&lt;/p&gt;
+&lt;p class="font-lg"&gt;&lt;/p&gt;
+&lt;p class="font-xl"&gt;&lt;/p&gt;
+&lt;p class="font-2xl"&gt;&lt;/p&gt;
+&lt;p class="font-3xl"&gt;&lt;/p&gt;
+&lt;p class="font-4xl"&gt;&lt;/p&gt;
+&lt;p class="font-5xl"&gt;&lt;/p&gt;
+&lt;p class="font-6xl"&gt;&lt;/p&gt;
+&lt;p class="font-7xl"&gt;&lt;/p&gt;
+&lt;p class="font-8xl"&gt;&lt;/p&gt;
+&lt;p class="font-9xl"&gt;&lt;/p&gt;
+               </code>
+            </pre>
+            <div class="sans bg-red-100 p-4">
+               <p class="font-slim">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="font-extralighter">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="font-lighter">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="font-light">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="font-medium">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="font-semibold">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="font-bold">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="font-extrabold">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="font-heavy">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+            </div>
+            <div class="my-2 bg-red-100 p-4">
+               <p class="letter-tightest">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="letter-tighter">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="letter-tight">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="letter-normal">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="letter-wide">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="letter-wider">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="letter-widest">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+            </div>
+            <div class="my-2 bg-red-100 p-4">
+               <p class="line-h-1 border-b-solid border-b-1 border-red-400">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum temporibus reiciendis ad velit sequi libero earum, optio sint assumenda aspernatur sed, fugiat porro. Quasi ipsa consectetur provident, dolor explicabo placeat.</p>
+               <p class="line-h-2 border-b-solid border-b-1 border-red-400">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum temporibus reiciendis ad velit sequi libero earum, optio sint assumenda aspernatur sed, fugiat porro. Quasi ipsa consectetur provident, dolor explicabo placeat.</p>
+               <p class="line-h-3 border-b-solid border-b-1 border-red-400">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum temporibus reiciendis ad velit sequi libero earum, optio sint assumenda aspernatur sed, fugiat porro. Quasi ipsa consectetur provident, dolor explicabo placeat.</p>
+               <p class="line-h-4 border-b-solid border-b-1 border-red-400">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum temporibus reiciendis ad velit sequi libero earum, optio sint assumenda aspernatur sed, fugiat porro. Quasi ipsa consectetur provident, dolor explicabo placeat.</p>
+               <p class="line-h-5 border-b-solid border-b-1 border-red-400">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum temporibus reiciendis ad velit sequi libero earum, optio sint assumenda aspernatur sed, fugiat porro. Quasi ipsa consectetur provident, dolor explicabo placeat.</p>
+               <p class="line-h-6 border-b-solid border-b-1 border-red-400">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum temporibus reiciendis ad velit sequi libero earum, optio sint assumenda aspernatur sed, fugiat porro. Quasi ipsa consectetur provident, dolor explicabo placeat.</p>
+               <p class="line-h-7 border-b-solid border-b-1 border-red-400">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum temporibus reiciendis ad velit sequi libero earum, optio sint assumenda aspernatur sed, fugiat porro. Quasi ipsa consectetur provident, dolor explicabo placeat.</p>
+               <p class="line-h-8 border-b-solid border-b-1 border-red-400">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum temporibus reiciendis ad velit sequi libero earum, optio sint assumenda aspernatur sed, fugiat porro. Quasi ipsa consectetur provident, dolor explicabo placeat.</p>
+               <p class="line-h-8">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum temporibus reiciendis ad velit sequi libero earum, optio sint assumenda aspernatur sed, fugiat porro. Quasi ipsa consectetur provident, dolor explicabo placeat.</p>
+            </div>
+            <div class="my-2 bg-red-100 p-4">
+               <input class="placeholder-red-400" placeholder="Input text">
+               <input class="placeholder-green-400" placeholder="Input text">     
+            </div>
+            <div class="my-2 bg-red-100 p-4">
+               <p class="text-red-500 md:text-green-500 text-opacity-100 text-opacity-100:hover uppercase">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="text-red-500 md:text-green-500 text-opacity-90 md:text-opacity-90 text-opacity-100:hover lowercase">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="text-red-500 md:text-green-500 text-opacity-70 md:text-opacity-70 text-opacity-100:hover capitalize">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="text-red-500 md:text-green-500 text-opacity-60 md:text-opacity-60 text-opacity-100:hover underline">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="text-red-500 md:text-green-500 text-opacity-50 md:text-opacity-50 text-opacity-100:hover line-through">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="text-red-500 md:text-green-500 text-opacity-40 md:text-opacity-40 text-opacity-100:hover">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+               <p class="text-red-500 md:text-green-500 text-opacity-30 md:text-opacity-30 text-opacity-100:hover">Съешь ещё этих мягких французских булок, да выпей чаю</p>
+            </div>
+            </div>
+
+            <div class="border-solid border-1 border-gray-600 my-2 p-2"> 
+               <h2 class="font-bold py-2 letter-tighter sm:letter-normal" id="trbl">Top\Right\Bottom\Left</h2>
+               <div class="relative overflow-hidden mb-8">
+                  <div class="p-10">
+                     <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:grid-cols-4">
+                        <div class="relative p-2 h-32 w-32 bg-red-300 border-rd-md">
+                           <div class="absolute inset-x-0 top-0 h-16 bg-red-500 text-white font-extrabold font-2xl flex items-center justify-center border-rd-md">1</div>
+                        </div>
+                        <div class="relative p-2 h-32 w-32 bg-red-300 border-rd-md">
+                           <div class="absolute inset-y-0 right-0 w-16 bg-red-500 text-white font-extrabold font-2xl flex items-center justify-center border-rd-md">2</div>
+                        </div>
+                        <div class="relative p-2 h-32 w-32 bg-red-300 border-rd-md">
+                           <div class="absolute inset-x-0 bottom-0 h-16 bg-red-500 text-white font-extrabold font-2xl flex items-center justify-center border-rd-md">3</div>
+                        </div>
+                        <div class="relative p-2 h-32 w-32 bg-red-300 border-rd-md">
+                           <div class="absolute inset-y-0 left-0 w-16 bg-red-500 text-white font-extrabold font-2xl flex items-center justify-center border-rd-md">4</div>
+                        </div>
+                        <div class="relative p-2 h-32 w-32 bg-red-300 border-rd-md">
+                           <div class="absolute inset-0 bg-red-500 text-white font-extrabold font-2xl flex items-center justify-center border-rd-md">5</div>
+                        </div>
+                        <div class="relative p-2 h-32 w-32 bg-red-300 border-rd-md">
+                           <div class="absolute top-0 left-0 h-16 w-16 bg-red-500 text-white font-extrabold font-2xl flex items-center justify-center border-rd-md">6</div>
+                        </div>
+                        <div class="relative p-2 h-32 w-32 bg-red-300 border-rd-md">
+                           <div class="absolute top-0 right-0 h-16 w-16 bg-red-500 text-white font-extrabold font-2xl flex items-center justify-center border-rd-md">7</div>
+                        </div>
+                        <div class="relative p-2 h-32 w-32 bg-red-300 border-rd-md">
+                           <div class="absolute bottom-0 left-0 h-16 w-16 bg-red-500 text-white font-extrabold font-2xl flex items-center justify-center border-rd-md">8</div>
+                        </div>
+                        <div class="relative p-2 h-32 w-32 bg-red-300 border-rd-md">
+                           <div class="absolute bottom-0 right-0 h-16 w-16 bg-red-500 text-white font-extrabold font-2xl flex items-center justify-center border-rd-md">8</div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <pre class="bg-gray-900 border-rd text-white font-lg px-4 py-2">
+                  <code class="whitespace-pre-wrap">
+&lt;div class="relative h-32 w-32 ..."&gt;
+&lt;div class="absolute inset-x-0 top-0 h-16 ..."&gt;1&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="relative h-32 w-32 ..."&gt;
+&lt;div class="absolute inset-y-0 right-0 w-16 ..."&gt;2&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="relative h-32 w-32 ..."&gt;
+  &lt;div class="absolute inset-x-0 bottom-0 h-16 ..."&gt;3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="relative h-32 w-32 ..."&gt;
+  &lt;div class="absolute inset-y-0 left-0 w-16 ...">4&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="relative h-32 w-32 ..."&gt;
+  &lt;div class="absolute inset-0 ...">5&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="relative h-32 w-32 ..."&gt;
+  &lt;div class="absolute left-0 top-0 h-16 w-16 ...">6&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="relative h-32 w-32 ..."&gt;
+  &lt;div class="absolute top-0 right-0 h-16 w-16 ...">7&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="relative h-32 w-32 ..."&gt;
+  &lt;div class="absolute bottom-0 right-0 h-16 w-16 ...">8&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="relative h-32 w-32 ..."&gt;
+  &lt;div class="absolute bottom-0 left-0 h-16 w-16 ...">9&lt;/div&gt;
+&lt;/div&gt;
+                  </code>
+               </pre>
+            </div>
+            
+         </div>
+      </div>
+      <div class="py-4">
+      </div>
+      
+      <footer class="bg-gray-800 border-t-1 border-gray-400">
+         <div class="container mx-auto flex py-8">
+            <div class="w-full mx-auto flex flex-wrap">
+               <div class="flex w-full lg:w-1/2 ">
+                  <div class="px-8">
+                     <h3 class="font-bold text-white"></h3>
+                     <p class="py-4 text-white font-sm">
+                        
+                     </p>
+                  </div>
+               </div>
+               <div class="flex w-full lg:w-1/2 lg:justify-end lg:text-right">
+                  <div class="px-8">
+                     <h3 class="font-bold text-white"></h3>
+                     <ul class="list-none items-center font-sm pt-3">
+                        <li>
+                          
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <script>
+        
+         var helpMenuDiv = document.getElementById("menu-content");
+         var helpMenu = document.getElementById("menu-toggle");
+         
+         document.onclick = check;
+         
+         function check(e){
+           var target = (e && e.target) || (event && event.srcElement);
+           
+           if (!checkParent(target, helpMenuDiv)) {
+         	if (checkParent(target, helpMenu)) {
+         	  if (helpMenuDiv.classList.contains("hidden")) {
+         		helpMenuDiv.classList.remove("hidden");
+         	  } else {helpMenuDiv.classList.add("hidden");}
+         	} else {
+         	  helpMenuDiv.classList.add("hidden");
+         	}
+           }
+         }
+         
+         function checkParent(t, elm) {
+           while(t.parentNode) {
+         	if( t == elm ) {return true;}
+         	t = t.parentNode;
+           }
+           return false;
+         }
+      </script>
+      
+   </body>
+</html>

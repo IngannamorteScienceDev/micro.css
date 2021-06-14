@@ -1,0 +1,230 @@
+@mixin trbl($size: '', $states: ''){
+    @if $size == '' and $states == ''{
+        @each $space,$value in $spacing{
+            .top-#{$space}{
+                top: #{$value};
+            }
+            .right-#{$space}{
+                right: #{$value};
+            }
+            .bottom-#{$space}{
+                bottom: #{$value};
+            }
+            .left-#{$space}{
+                left: #{$value};
+            }
+            .n-top-#{$space}{
+                top: -#{$value};
+            }
+            .n-right-#{$space}{
+                right: -#{$value};
+            }
+            .n-bottom-#{$space}{
+                bottom: -#{$value};
+            }
+            .n-left-#{$space}{
+                left: -#{$value};
+            }
+            .inset-#{$space}{
+                top: #{$value};
+                right: #{$value};
+                bottom: #{$value};
+                left: #{$value};
+            }
+            .inset-x-#{$space}{
+                right: #{$value};
+                left: #{$value};
+            }
+            .inset-y-#{$space}{
+                top: #{$value};
+                bottom: #{$value};
+            }
+            .n-inset-#{$space}{
+                top: -#{$value};
+                right: -#{$value};
+                bottom: -#{$value};
+                left: -#{$value};
+            }
+            .n-inset-x-#{$space}{
+                right: -#{$value};
+                left: -#{$value};
+            }
+            .n-inset-y-#{$space}{
+                top: -#{$value};
+                bottom: -#{$value};
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states{
+            @each $space,$value in $spacing{
+                .top-#{$space}\:#{$state}:#{$state}{
+                    top: #{$value};
+                }
+                .right-#{$space}\:#{$state}:#{$state}{
+                    right: #{$value};
+                }
+                .bottom-#{$space}\:#{$state}:#{$state}{
+                    bottom: #{$value};
+                }
+                .left-#{$space}\:#{$state}:#{$state}{
+                    left: #{$value};
+                }
+                .n-top-#{$space}\:#{$state}:#{$state}{
+                    top: -#{$value};
+                }
+                .n-right-#{$space}\:#{$state}:#{$state}{
+                    right: -#{$value};
+                }
+                .n-bottom-#{$space}\:#{$state}:#{$state}{
+                    bottom: -#{$value};
+                }
+                .n-left-#{$space}\:#{$state}:#{$state}{
+                    left: -#{$value};
+                }
+                .inset-#{$space}\:#{$state}:#{$state}{
+                    top: #{$value};
+                    right: #{$value};
+                    bottom: #{$value};
+                    left: #{$value};
+                }
+                .inset-x-#{$space}\:#{$state}:#{$state}{
+                    right: #{$value};
+                    left: #{$value};
+                }
+                .inset-y-#{$space}\:#{$state}:#{$state}{
+                    top: #{$value};
+                    bottom: #{$value};
+                }
+                .n-inset-#{$space}\:#{$state}:#{$state}{
+                    top: -#{$value};
+                    right: -#{$value};
+                    bottom: -#{$value};
+                    left: -#{$value};
+                }
+                .n-inset-x-#{$space}\:#{$state}:#{$state}{
+                    right: -#{$value};
+                    left: -#{$value};
+                }
+                .n-inset-y-#{$space}\:#{$state}:#{$state}{
+                    top: -#{$value};
+                    bottom: -#{$value};
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $space,$value in $spacing{
+            .#{$size}\:top-#{$space}{
+                top: #{$value};
+            }
+            .#{$size}\:right-#{$space}{
+                right: #{$value};
+            }
+            .#{$size}\:bottom-#{$space}{
+                bottom: #{$value};
+            }
+            .#{$size}\:left-#{$space}{
+                left: #{$value};
+            }
+            .#{$size}\:n-top-#{$space}{
+                top: -#{$value};
+            }
+            .#{$size}\:n-right-#{$space}{
+                right: -#{$value};
+            }
+            .#{$size}\:n-bottom-#{$space}{
+                bottom: -#{$value};
+            }
+            .#{$size}\:n-left-#{$space}{
+                left: -#{$value};
+            }
+            .#{$size}\:inset-#{$space}{
+                top: #{$value};
+                right: #{$value};
+                bottom: #{$value};
+                left: #{$value};
+            }
+            .#{$size}\:inset-x-#{$space}{
+                right: #{$value};
+                left: #{$value};
+            }
+            .#{$size}\:inset-y-#{$space}{
+                top: #{$value};
+                bottom: #{$value};
+            }
+            .#{$size}\:n-inset-#{$space}{
+                top: -#{$value};
+                right: -#{$value};
+                bottom: -#{$value};
+                left: -#{$value};
+            }
+            .#{$size}\:n-inset-x-#{$space}{
+                right: -#{$value};
+                left: -#{$value};
+            }
+            .#{$size}\:n-inset-y-#{$space}{
+                top: -#{$value};
+                bottom: -#{$value};
+            }
+        }
+    }
+    @else{
+        @each $state in $states{
+            @each $space,$value in $spacing{
+                .#{$size}\:top-#{$space}\:#{$state}:#{$state}{
+                    top: #{$value};
+                }
+                .#{$size}\:right-#{$space}\:#{$state}:#{$state}{
+                    right: #{$value};
+                }
+                .#{$size}\:bottom-#{$space}\:#{$state}:#{$state}{
+                    bottom: #{$value};
+                }
+                .#{$size}\:left-#{$space}\:#{$state}:#{$state}{
+                    left: #{$value};
+                }
+                .#{$size}\:n-top-#{$space}\:#{$state}:#{$state}{
+                    top: -#{$value};
+                }
+                .#{$size}\:n-right-#{$space}\:#{$state}:#{$state}{
+                    right: -#{$value};
+                }
+                .#{$size}\:n-bottom-#{$space}\:#{$state}:#{$state}{
+                    bottom: -#{$value};
+                }
+                .#{$size}\:n-left-#{$space}\:#{$state}:#{$state}{
+                    left: -#{$value};
+                }
+                .#{$size}\:inset-#{$space}\:#{$state}:#{$state}{
+                    top: #{$value};
+                    right: #{$value};
+                    bottom: #{$value};
+                    left: #{$value};
+                }
+                .#{$size}\:inset-x-#{$space}\:#{$state}:#{$state}{
+                    right: #{$value};
+                    left: #{$value};
+                }
+                .#{$size}\:inset-y-#{$space}\:#{$state}:#{$state}{
+                    top: #{$value};
+                    bottom: #{$value};
+                }
+                .#{$size}\:n-inset-#{$space}\:#{$state}:#{$state}{
+                    top: -#{$value};
+                    right: -#{$value};
+                    bottom: -#{$value};
+                    left: -#{$value};
+                }
+                .#{$size}\:n-inset-x-#{$space}\:#{$state}:#{$state}{
+                    right: -#{$value};
+                    left: -#{$value};
+                }
+                .#{$size}\:n-inset-y-#{$space}\:#{$state}:#{$state}{
+                    top: -#{$value};
+                    bottom: -#{$value};
+                }
+            }
+        }
+    }
+}

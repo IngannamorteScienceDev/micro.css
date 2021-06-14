@@ -1,0 +1,722 @@
+@mixin just-content($size: '', $states: '') {
+    @if $size == '' and $states == ''{
+        .justify-flex-start{
+            justify-content: flex-start;
+        }
+        .justify-flex-end{
+            justify-content: flex-end;
+        }
+        .justify-center{
+            justify-content: center;
+        }
+        .justify-between{
+            justify-content: space-between;
+        }
+        .justify-around{
+            justify-content: space-around;
+        }
+        .justify-evenly{
+            justify-content: space-evenly;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .justify--flex-start\:#{$state}:#{$state}{
+                justify-content: flex-start;
+            }
+            .justify-flex-end\:#{$state}:#{$state}{
+                justify-content: flex-end;
+            }
+            .justify-center\:#{$state}:#{$state}{
+                justify-content: center;
+            }
+            .justify-between\:#{$state}:#{$state}{
+                justify-content: space-between;
+            }
+            .justify-around\:#{$state}:#{$state}{
+                justify-content: space-around;
+            }
+            .justify-evenly\:#{$state}:#{$state}{
+                justify-content: space-evenly;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:justify-flex-start{
+            justify-content: flex-start;
+        }
+        .#{$size}\:justify-flex-end{
+            justify-content: flex-end;
+        }
+        .#{$size}\:justify-center{
+            justify-content: center;
+        }
+        .#{$size}\:justify-between{
+            justify-content: space-between;
+        }
+        .#{$size}\:justify-around{
+            justify-content: space-around;
+        }
+        .#{$size}\:justify-evenly{
+            justify-content: space-evenly;
+        }
+    }
+    @else{
+        @each $state in $states {
+            .#{$size}\:justify-flex-start\:#{$state}:#{$state}{
+                justify-content: flex-start;
+            }
+            .#{$size}\:justify-flex-end\:#{$state}:#{$state}{
+                justify-content: flex-end;
+            }
+            .#{$size}\:justify-center\:#{$state}:#{$state}{
+                justify-content: center;
+            }
+            .#{$size}\:justify-between\:#{$state}:#{$state}{
+                justify-content: space-between;
+            }
+            .#{$size}\:justify-around\:#{$state}:#{$state}{
+                justify-content: space-around;
+            }
+            .#{$size}\:justify-evenly\:#{$state}:#{$state}{
+                justify-content: space-evenly;
+            }
+        }
+    }
+}
+
+@mixin just-items($size: '', $states: '') {
+    @if $size == '' and $states == ''{
+        .justify-items-auto{
+            justify-items: auto;
+        }
+        .justify-items-start{
+            justify-items: start;
+        }
+        .justify-items-end{
+            justify-items: end;
+        }
+        .justify-items-center{
+            justify-items: center;
+        }
+        .justify-items-stretch{
+            justify-items: stretch;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .justify-items-auto\:#{state}:#{$state}{
+                justify-items: auto;
+            }
+            .justify-items-start\:#{state}:#{$state}{
+                justify-items: start;
+            }
+            .justify-items-end\:#{state}:#{$state}{
+                justify-items: end;
+            }
+            .justify-items-center\:#{state}:#{$state}{
+                justify-items: center;
+            }
+            .justify-items-stretch\:#{state}:#{$state}{
+                justify-items: stretch;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:justify-items-auto{
+            justify-items: auto;
+        }
+        .#{$size}\:justify-items-start{
+            justify-items: start;
+        }
+        .#{$size}\:justify-items-end{
+            justify-items: end;
+        }
+        .#{$size}\:justify-items-center{
+            justify-items: center;
+        }
+        .#{$size}\:justify-items-stretch{
+            justify-items: stretch;
+        }
+    }
+    @else{
+        @each $state in $states {
+            .#{$size}\:justify-items-auto\:#{$state}:#{$state}{
+                justify-items: auto;
+            }
+            .#{$size}\:justify-items-start\:#{$state}:#{$state}{
+                justify-items: start;
+            }
+            .#{$size}\:justify-items-end\:#{$state}:#{$state}{
+                justify-items: end;
+            }
+            .#{$size}\:justify-items-center\:#{$state}:#{$state}{
+                justify-items: center;
+            }
+            .#{$size}\:justify-items-stretch\:#{$state}:#{$state}{
+                justify-items: stretch;
+            }
+        }
+    }
+}
+
+@mixin just-self($size: '', $states: '') {
+    @if $size == '' and $states == ''{
+        .justify-self-auto{
+            justify-self: auto;
+        }
+        .justify-self-start{
+            justify-self: start;
+        }
+        .justify-self-end{
+            justify-self: end;
+        }
+        .justify-self-center{
+            justify-self: center;
+        }
+        .justify-self-stretch{
+            justify-self: stretch;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .justify-self-auto\:#{state}:#{$state}{
+                justify-self: auto;
+            }
+            .justify-self-start\:#{state}:#{$state}{
+                justify-self: start;
+            }
+            .justify-self-end\:#{state}:#{$state}{
+                justify-self: end;
+            }
+            .justify-self-center\:#{state}:#{$state}{
+                justify-self: center;
+            }
+            .justify-self-stretch\:#{state}:#{$state}{
+                justify-self: stretch;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:justify-self-auto{
+            justify-self: auto;
+        }
+        .#{$size}\:justify-self-start{
+            justify-self: start;
+        }
+        .#{$size}\:justify-self-end{
+            justify-self: end;
+        }
+        .#{$size}\:justify-self-center{
+            justify-self: center;
+        }
+        .#{$size}\:justify-self-stretch{
+            justify-self: stretch;
+        }
+    }
+    @else{
+        @each $state in $states {
+            .#{$size}\:justify-self-auto\:#{$state}:#{$state}{
+                justify-self: auto;
+            }
+            .#{$size}\:justify-self-start\:#{$state}:#{$state}{
+                justify-self: start;
+            }
+            .#{$size}\:justify-self-end\:#{$state}:#{$state}{
+                justify-self: end;
+            }
+            .#{$size}\:justify-self-center\:#{$state}:#{$state}{
+                justify-self: center;
+            }
+            .#{$size}\:justify-self-stretch\:#{$state}:#{$state}{
+                justify-self: stretch;
+            }
+        }
+    }
+}
+
+@mixin align-content($size: '', $states: '') {
+    @if $size == '' and $states == ''{
+        .content-center{
+            align-content: center;
+        }
+        .content-flex-start{
+            align-content: flex-start;
+        }
+        .content-flex-end{
+            align-content: flex-end;
+        }
+        .content-space-between{
+            align-content: space-between;
+        }
+        .content-space-around{
+            align-content: space-around;
+        }
+        .content-space-evenly{
+            align-content: space-evenly;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .content-center\:#{$state}:#{$state}{
+                align-content: center;
+            }
+            .content-flex-start\:#{$state}:#{$state}{
+                align-content: flex-start;
+            }
+            .content-flex-end\:#{$state}:#{$state}{
+                align-content: flex-end;
+            }
+            .content-space-between\:#{$state}:#{$state}{
+                align-content: space-between;
+            }
+            .content-space-around\:#{$state}:#{$state}{
+                align-content: space-around;
+            }
+            .content-space-evenly\:#{$state}:#{$state}{
+                align-content: space-evenly;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:content-center{
+            align-content: center;
+        }
+        .#{$size}\:content-flex-start{
+            align-content: flex-start;
+        }
+        .#{$size}\:content-flex-end{
+            align-content: flex-end;
+        }
+        .#{$size}\:content-space-between{
+            align-content: space-between;
+        }
+        .#{$size}\:content-space-around{
+            align-content: space-around;
+        }
+        .#{$size}\:content-space-evenly{
+            align-content: space-evenly;
+        }
+    }
+    @else{
+        @each $state in $states {
+            .#{$size}\:content-center\:#{$state}:#{$state}{
+                align-content: center;
+            }
+            .#{$size}\:content-flex-start\:#{$state}:#{$state}{
+                align-content: flex-start;
+            }
+            .#{$size}\:content-flex-end\:#{$state}:#{$state}{
+                align-content: flex-end;
+            }
+            .#{$size}\:content-space-between\:#{$state}:#{$state}{
+                align-content: space-between;
+            }
+            .#{$size}\:content-space-around\:#{$state}:#{$state}{
+                align-content: space-around;
+            }
+            .#{$size}\:content-space-evenly\:#{$state}:#{$state}{
+                align-content: space-evenly;
+            }
+        }
+    }
+}
+
+@mixin align-items($size: '', $states: '') {
+    @if $size == '' and $states == ''{
+        .items-flex-start{
+            align-items: flex-start;
+        }
+        .items-flex-end{
+            align-items: flex-end;
+        }
+        .items-center{
+            align-items: center;
+        }
+        .items-baseline{
+            align-items: baseline;
+        }
+        .items-stretch{
+            align-items: stretch;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .items-flex-start\:#{$state}:#{$state}{
+                align-items: flex-start;
+            }
+            .items-flex-end\:#{$state}:#{$state}{
+                align-items: flex-end;
+            }
+            .items-center\:#{$state}:#{$state}{
+                align-items: center;
+            }
+            .items-baseline\:#{$state}:#{$state}{
+                align-items: baseline;
+            }
+            .items-stretch\:#{$state}:#{$state}{
+                align-items: stretch;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:items-flex-start{
+            align-items: flex-start;
+        }
+        .#{$size}\:items-flex-end{
+            align-items: flex-end;
+        }
+        .#{$size}\:items-center{
+            align-items: center;
+        }
+        .#{$size}\:items-baseline{
+            align-items: baseline;
+        }
+        .#{$size}\:items-stretch{
+            align-items: stretch;
+        }
+    }
+    @else{
+        @each $state in $states {
+            .#{$size}\:items-flex-start\:#{$state}:#{$state}{
+                align-items: flex-start;
+            }
+            .#{$size}\:items-flex-end\:#{$state}:#{$state}{
+                align-items: flex-end;
+            }
+            .#{$size}\:items-center\:#{$state}:#{$state}{
+                align-items: center;
+            }
+            .#{$size}\:items-baseline\:#{$state}:#{$state}{
+                align-items: baseline;
+            }
+            .#{$size}\:items-stretch\:#{$state}:#{$state}{
+                align-items: stretch;
+            }
+        }
+    }
+}
+
+@mixin align-self($size: '', $states: '') {
+    @if $size == '' and $states == ''{
+        .self-auto{
+            align-self: auto;
+        }
+        .self-start{
+            align-self: flex-start;
+        }
+        .self-end{
+            align-self: flex-end;
+        }
+        .self-center{
+            align-self: center;
+        }
+        .self-stretch{
+            align-self: stretch;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .self-auto\:#{$state}:#{$state}{
+                align-self: auto;
+            }
+            .self-start\:#{$state}:#{$state}{
+                align-self: flex-start;
+            }
+            .self-end\:#{$state}:#{$state}{
+                align-self: flex-end;
+            }
+            .self-center\:#{$state}:#{$state}{
+                align-self: center;
+            }
+            .self-stretch\:#{$state}:#{$state}{
+                align-self: stretch;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:self-auto{
+            align-self: auto;
+        }
+        .#{$size}\:self-start{
+            align-self: flex-start;
+        }
+        .#{$size}\:self-end{
+            align-self: flex-end;
+        }
+        .#{$size}\:self-center{
+            align-self: center;
+        }
+        .#{$size}\:self-stretch{
+            align-self: stretch;
+        }
+    }
+    @else{
+        @each $state in $states {
+            .#{$size}\:self-auto\:#{$state}:#{$state}{
+                align-self: auto;
+            }
+            .#{$size}\:self-start\:#{$state}:#{$state}{
+                align-self: flex-start;
+            }
+            .#{$size}\:self-end\:#{$state}:#{$state}{
+                align-self: flex-end;
+            }
+            .#{$size}\:self-center\:#{$state}:#{$state}{
+                align-self: center;
+            }
+            .#{$size}\:self-stretch\:#{$state}:#{$state}{
+                align-self: stretch;
+            }
+        }
+    }
+}
+
+@mixin place-content($size: '', $states: '') {
+    @if $size == '' and $states == ''{
+        .place-content-start{
+            place-content: start;
+        }
+        .place-content-end{
+            place-content: end;
+        }
+        .place-content-center{
+            place-content: center;
+        }
+        .place-content-between{
+            place-content: space-between;
+        }
+        .place-content-around{
+            place-content: space-around;
+        }
+        .place-content-evenly{
+            place-content: space-evenly;
+        }
+        .place-content-stretch{
+            place-content: stretch;
+        }
+}
+    @else if $size == ''{
+        @each $state in $states {
+            .place-content-start\:#{$state}:#{$state}{
+                place-content: start;
+            }
+            .place-content-end\:#{$state}:#{$state}{
+                place-content: end;
+            }
+            .place-content-center\:#{$state}:#{$state}{
+                place-content: center;
+            }
+            .place-content-between\:#{$state}:#{$state}{
+                place-content: space-between;
+            }
+            .place-content-around\:#{$state}:#{$state}{
+                place-content: space-around;
+            }
+            .place-content-evenly\:#{$state}:#{$state}{
+                place-content: space-evenly;
+            }
+            .place-content-stretch\:#{$state}:#{$state}{
+                place-content: stretch;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:place-content-start{
+            place-content: start;
+        }
+        .#{$size}\:place-content-end{
+            place-content: end;
+        }
+        .#{$size}\:place-content-center{
+            place-content: center;
+        }
+        .#{$size}\:place-content-between{
+            place-content: space-between;
+        }
+        .#{$size}\:place-content-around{
+            place-content: space-around;
+        }
+        .#{$size}\:place-content-evenly{
+            place-content: space-evenly;
+        }
+        .#{$size}\:place-content-stretch{
+            place-content: stretch;
+        }
+    }
+    @else{
+        @each $state in $states {
+            .#{$size}\:place-content-start\:#{$state}:#{$state}{
+                place-content: start;
+            }
+            .#{$size}\:place-content-end\:#{$state}:#{$state}{
+                place-content: end;
+            }
+            .#{$size}\:place-content-center\:#{$state}:#{$state}{
+                place-content: center;
+            }
+            .#{$size}\:place-content-between\:#{$state}:#{$state}{
+                place-content: space-between;
+            }
+            .#{$size}\:place-content-around\:#{$state}:#{$state}{
+                place-content: space-around;
+            }
+            .#{$size}\:place-content-evenly\:#{$state}:#{$state}{
+                place-content: space-evenly;
+            }
+            .#{$size}\:place-content-stretch\:#{$state}:#{$state}{
+                place-content: stretch;
+            }
+        }
+    }
+}
+
+@mixin place-items($size: '', $states: '') {
+    @if $size == '' and $states == ''{
+        .place-items-start{
+            place-items: start;
+        }
+        .place-items-end{
+            place-items: end;
+        }
+        .place-items-center{
+            place-items: center;
+        }
+        .place-items-auto{
+            place-items: auto;
+        }
+        .place-items-stretch{
+            place-items: stretch;
+        }
+}
+    @else if $size == ''{
+        @each $state in $states {
+            .place-items-start\:#{$state}:#{state}{
+                place-items: start;
+            }
+            .place-items-end\:#{$state}:#{state}{
+                place-items: end;
+            }
+            .place-items-center\:#{$state}:#{state}{
+                place-items: center;
+            }
+            .place-items-auto\:#{$state}:#{state}{
+                place-items: auto;
+            }
+            .place-items-stretch\:#{$state}:#{state}{
+                place-items: stretch;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:place-items-start{
+            place-items: start;
+        }
+        .#{$size}\:place-items-end{
+            place-items: end;
+        }
+        .#{$size}\:place-items-center{
+            place-items: center;
+        }
+        .#{$size}\:place-items-auto{
+            place-items: auto;
+        }
+        .#{$size}\:place-items-stretch{
+            place-items: stretch;
+        }
+    }
+    @else{
+        @each $state in $states {
+            .#{$size}\:place-items-start\:#{$state}:#{state}{
+                place-items: start;
+            }
+            .#{$size}\:place-items-end\:#{$state}:#{state}{
+                place-items: end;
+            }
+            .#{$size}\:place-items-center\:#{$state}:#{state}{
+                place-items: center;
+            }
+            .#{$size}\:place-items-auto\:#{$state}:#{state}{
+                place-items: auto;
+            }
+            .#{$size}\:place-items-stretch\:#{$state}:#{state}{
+                place-items: stretch;
+            }
+        }
+    }
+}
+
+@mixin place-self($size: '', $states: '') {
+    @if $size == '' and $states == ''{
+        .place-self-start{
+            place-self: start;
+        }
+        .place-self-end{
+            place-self: end;
+        }
+        .place-self-center{
+            place-self: center;
+        }
+        .place-self-auto{
+            place-self: auto;
+        }
+        .place-self-stretch{
+            place-self: stretch;
+        }
+}
+    @else if $size == ''{
+        @each $state in $states {
+            .place-self-start\:#{$state}:#{$state}{
+                place-self: start;
+            }
+            .place-self-end\:#{$state}:#{$state}{
+                place-self: end;
+            }
+            .place-self-center\:#{$state}:#{$state}{
+                place-self: center;
+            }
+            .place-self-auto\:#{$state}:#{$state}{
+                place-self: auto;
+            }
+            .place-self-stretch\:#{$state}:#{$state}{
+                place-self: stretch;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:place-self-start{
+            place-self: start;
+        }
+        .#{$size}\:place-self-end{
+            place-self: end;
+        }
+        .#{$size}\:place-self-center{
+            place-self: center;
+        }
+        .#{$size}\:place-self-auto{
+            place-self: auto;
+        }
+        .#{$size}\:place-self-stretch{
+            place-self: stretch;
+        }
+    }
+    @else{
+        @each $state in $states {
+            .#{$size}\:place-self-start\:#{$state}:#{$state}{
+                place-self: start;
+            }
+            .#{$size}\:place-self-end\:#{$state}:#{$state}{
+                place-self: end;
+            }
+            .#{$size}\:place-self-center\:#{$state}:#{$state}{
+                place-self: center;
+            }
+            .#{$size}\:place-self-auto\:#{$state}:#{$state}{
+                place-self: auto;
+            }
+            .#{$size}\:place-self-stretch\:#{$state}:#{$state}{
+                place-self: stretch;
+            }
+        }
+    }
+}

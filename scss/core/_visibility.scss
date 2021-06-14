@@ -1,0 +1,42 @@
+@mixin visibility($size: '', $states: ''){
+    @if $size == '' and $states == ''{
+        .visible{
+            visibility: visible;
+        }
+
+        .invisible{
+            visibility: hidden;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .visible\:#{$state}:#{$state}{
+                visibility: visible;
+            }
+    
+            .invisible:#{$state}{
+                visibility: hidden;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:visible{
+            visibility: visible;
+        }
+
+        .#{$size}\:invisible{
+            visibility: hidden;
+        }
+    }
+    @else {
+        @each $state in $states {
+            .#{$size}\:visible\:#{$state}:#{$state}{
+                visibility: visible;
+            }
+    
+            .#{$size}\:invisible\:#{$state}:#{$state}{
+                visibility: hidden;
+            }
+        }
+    }
+}

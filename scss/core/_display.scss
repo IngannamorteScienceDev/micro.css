@@ -1,0 +1,34 @@
+@mixin display($size: '', $states: ''){
+    @if $size == '' and $states == ''{
+        @each $display, $value in $displays {
+            .#{$display} {
+                display: $value;
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $display, $value in $displays{
+            @each $state in $states {
+                .#{$display}\:#{$state}:#{$state} {
+                    display: $value;
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $display, $value in $displays {
+            .#{$size}\:#{$display} {
+                display: $value;
+            }
+        }
+    }
+    @else{
+        @each $display, $value in $displays{
+            @each $state in $states {
+                .#{$size}\:#{$display}\:#{$state}:#{$state} {
+                    display: $value;
+                }
+            }
+        }
+    }
+}

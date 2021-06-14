@@ -1,0 +1,1026 @@
+@mixin font-family($size: '', $states: ''){
+    @if $size == '' and $states == ''{
+        .sans{
+            font-family: Arial, sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica , "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+        
+        .serif{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        
+        .mono{
+            font-family:  Monaco, Consolas,monospace;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .sans\:#{$state}:#{$state}{
+                font-family: sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            }
+            
+            .serif\:#{$state}:#{$state}{
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+            
+            .mono\:#{$state}:#{$state}{
+                font-family:  Monaco, Consolas,monospace;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:sans{
+            font-family: sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+        
+        .#{$size}\:serif{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        
+        .#{$size}\:mono{
+            font-family:  Monaco, Consolas,monospace;
+        }
+    }
+    @else {
+        @each $state in $states {
+            .#{$size}\:sans\:#{$state}:#{$state}{
+                font-family: sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            }
+            
+            .#{$size}\:serif\:#{$state}:#{$state}{
+                font-family: Georgia, 'Times New Roman', Times, serif;
+            }
+            
+            .#{$size}\:mono\:#{$state}:#{$state}{
+                font-family:  Monaco, Consolas,monospace;
+            }
+        }
+    }
+}
+
+@mixin text-color($size: '',$states: ''){
+    @if $size == '' and $states == ''{
+        @each $color, $value in $colors {
+            .text-#{$color} {
+                --opacity-text: #{$opacity-100};
+                color: rgba($value,var(--opacity-text));
+            }
+        }
+
+        @each $color, $value in $palette-colors {
+            .text-#{$color} {
+                --opacity-text: #{$opacity-100};
+                color: rgba($value,var(--opacity-text));
+            }
+        }
+        
+        @each $color, $value in $status-colors {
+            .text-#{$color} {
+                --opacity-text: #{$opacity-100};
+                color: rgba($value,var(--opacity-text));
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            @each $color, $value in $colors {
+                .text-#{$color}\:#{$state}:#{$state} {
+                    --opacity-text: #{$opacity-100};
+                    color: rgba($value,var(--opacity-text));
+                }
+            }
+    
+            @each $color, $value in $palette-colors {
+                .text-#{$color}\:#{$state}:#{$state} {
+                    --opacity-text: #{$opacity-100};
+                    color: rgba($value,var(--opacity-text));
+                }
+            }
+            
+            @each $color, $value in $status-colors {
+                .text-#{$color}\:#{$state}:#{$state} {
+                    --opacity-text: #{$opacity-100};
+                    color: rgba($value,var(--opacity-text));
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $color, $value in $colors {
+            .#{$size}\:text-#{$color} {
+                --opacity-text: #{$opacity-100};
+                color: rgba($value,var(--opacity-text));
+            }
+        }
+
+        @each $color, $value in $palette-colors {
+            .#{$size}\:text-#{$color} {
+                --opacity-text: #{$opacity-100};
+                color: rgba($value,var(--opacity-text));
+            }
+        }
+        
+        @each $color, $value in $status-colors {
+            .#{$size}\:text-#{$color} {
+                --opacity-text: #{$opacity-100};
+                color: rgba($value,var(--opacity-text));
+            }
+        }
+    }
+    @else {
+        @each $state in $states {
+            @each $color, $value in $colors {
+                .#{$size}\:text-#{$color}\:#{$state}:#{$state} {
+                    --opacity-text: #{$opacity-100};
+                    color: rgba($value,var(--opacity-text));
+                }
+            }
+    
+            @each $color, $value in $palette-colors {
+                .#{$size}\:text-#{$color}\:#{$state}:#{$state} {
+                    --opacity-text: #{$opacity-100};
+                    color: rgba($value,var(--opacity-text));
+                }
+            }
+            
+            @each $color, $value in $status-colors {
+                .#{$size}\:text-#{$color}\:#{$state}:#{$state} {
+                    --opacity-text: #{$opacity-100};
+                    color: rgba($value,var(--opacity-text));
+                }
+            }
+        }
+    }
+}
+
+@mixin font-style($size: '', $states: ''){
+    @if $size == '' and $states == ''{
+        .italic{
+            font-style: italic;
+        }
+        
+        .no-italic{
+            font-style: normal;
+        }
+        
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .italic\:#{$state}:#{$state}{
+                font-style: italic;
+            }
+            
+            .no-italic\:#{$state}:#{$state}{
+                font-style: normal;
+            }
+            
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:italic{
+            font-style: italic;
+        }
+        
+        .#{$size}\:no-italic{
+            font-style: normal;
+        }
+        
+    }
+    @else {
+        @each $state in $states {
+            .#{$size}\:italic\:#{$state}:#{$state}{
+                font-style: italic;
+            }
+            
+            .#{$size}\:no-italic\:#{$state}:#{$state}{
+                font-style: normal;
+            }
+            
+        }
+    }
+}
+
+
+@mixin text-opacity($size: '', $states: ''){
+    @if $size == '' and $states == ''{
+        @each $key, $value in $opacity-list {
+            .text-#{$key}{
+                --opacity-text: #{$value};
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            @each $key, $value in $opacity-list {
+                .text-#{$key}\:#{$state}:#{$state}{
+                    --opacity-text: #{$value};
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $key, $value in $opacity-list {
+            .#{$size}\:text-#{$key}{
+                --opacity-text: #{$value};
+            }
+        }
+    }
+    @else {
+        @each $state in $states {
+            @each $key, $value in $opacity-list {
+                .#{$size}\:text-#{$key}\:#{$state}:#{$state}{
+                    --opacity-text: #{$value};
+                }
+            }
+        }
+    }
+}
+
+@mixin font-size($size: '', $states: '') {
+    @if $size == '' and $states == ''{
+        @each $key, $value in $font-sizes{
+            .font-#{$key}{
+                font-size: $value;
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states{
+            @each $key, $value in $font-sizes{
+                .font-#{$key}\:#{$state}:#{$state}{
+                    font-size: $value;
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $key, $value in $font-sizes{
+            .#{$size}\:font-#{$key}{
+                font-size: $value;
+            }
+        }
+    }
+    @else {
+        @each $state in $states{
+            @each $key, $value in $font-sizes{
+                .#{$size}\:font-#{$key}\:#{$state}:#{$state}{
+                    font-size: $value;
+                }
+            }
+        }
+    }
+}
+
+@mixin line-height($size: '', $states:'') {
+    @if $size == '' and $states == ''{
+        @each $key, $value in $line-heights{
+            .line-h-#{$key}{
+                line-height: $value;
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            @each $key, $value in $line-heights{
+                .line-h-#{$key}\:#{$state}:#{$state}{
+                    line-height: $value;
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $key, $value in $line-heights{
+            .#{$size}\:line-h-#{$key}{
+                line-height: $value;
+            }
+        }
+    }
+    @else{
+        @each $state in $states {
+            @each $key, $value in $line-heights{
+                .#{$size}\:line-h-#{$key}\:#{$state}:#{$state}{
+                    line-height: $value;
+                }
+            }
+        }
+    }
+}
+
+@mixin font-variant-numeric($size: '', $states:'') {
+    @if $size == '' and $states == ''{
+        @each $key, $value in $font-variant-numeric{
+            .#{$key}{
+                font-variant-numeric: $value;
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            @each $key, $value in $font-variant-numeric{
+                .#{$key}\:#{$state}:#{$state}{
+                    font-variant-numeric: $value;
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $key, $value in $font-variant-numeric{
+            .#{$size}\:#{$key}{
+                font-variant-numeric: $value;
+            }
+        }
+    }
+    @else {
+        @each $state in $states {
+            @each $key, $value in $font-variant-numeric{
+                .#{$size}\:#{$key}\:#{$state}:#{$state}{
+                    font-variant-numeric: $value;
+                }
+            }
+        }
+    }
+}
+
+@mixin font-weight($size: '', $states:'') {
+    @if $size == '' and $states == ''{
+        @each $key, $value in $font-weights{
+            .font-#{$key}{
+                font-weight: $value;
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states{
+            @each $key, $value in $font-weights{
+                .font-#{$key}\:#{$state}:#{$state}{
+                    font-weight: $value;
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $key, $value in $font-weights{
+            .#{$size}\:font-#{$key}{
+                font-weight: $value;
+            }
+        }
+    }
+    @else {
+        @each $state in $states{
+            @each $key, $value in $font-weights{
+                .#{$size}\:font-#{$key}\:#{$state}:#{$state}{
+                    font-weight: $value;
+                }
+            }
+        }
+    }
+}
+
+@mixin letter-spacing($size: '', $states:'') {
+    @if $size == '' and $states == ''{
+        @each $key, $value in $letter-spacing{
+            .letter-#{$key}{
+                letter-spacing: $value;
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            @each $key, $value in $letter-spacing{
+                .letter-#{$key}\:#{$state}:#{$state}{
+                    letter-spacing: $value;
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $key, $value in $letter-spacing{
+            .#{$size}\:letter-#{$key}{
+                letter-spacing: $value;
+            }
+        }
+    }
+    @else {
+        @each $state in $states {
+            @each $key, $value in $letter-spacing{
+                .#{$size}\:letter-#{$key}\:#{$state}:#{$state}{
+                    letter-spacing: $value;
+                }
+            }
+        }
+    }
+}
+
+@mixin list-style-type($size: '', $states:''){
+    @if $size == '' and $states == ''{
+        .list-none{
+            list-style-type: none;
+        }
+
+        .list-disc{
+            list-style-type: disc;
+        }
+
+        .list-decimal{
+            list-style-type: decimal;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .list-none\:#{$state}:#{$state}{
+                list-style-type: none;
+            }
+    
+            .list-disc\:#{$state}:#{$state}{
+                list-style-type: disc;
+            }
+    
+            .list-decimal\:#{$state}:#{$state}{
+                list-style-type: decimal;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:list-none{
+            list-style-type: none;
+        }
+
+        .#{$size}\:list-disc{
+            list-style-type: disc;
+        }
+
+        .#{$size}\:list-decimal{
+            list-style-type: decimal;
+        }
+    }
+    @else {
+        @each $state in $states {
+            .#{$size}\:list-none\:#{$state}:#{$state}{
+                list-style-type: none;
+            }
+    
+            .#{$size}\:list-disc\:#{$state}:#{$state}{
+                list-style-type: disc;
+            }
+    
+            .#{$size}\:list-decimal\:#{$state}:#{$state}{
+                list-style-type: decimal;
+            }
+        }
+    }
+}
+
+@mixin list-style-position($size: '', $states: ''){
+    @if $size == '' and $states == ''{
+        .list-inside{
+            list-style-position: inside;
+        }
+
+        .list-outside{
+            list-style-position: outside;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .list-inside\:#{$state}:#{$state}{
+                list-style-position: inside;
+            }
+    
+            .list-outside\:#{$state}:#{$state}{
+                list-style-position: outside;
+            }   
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:list-inside{
+            list-style-position: inside;
+        }
+
+        .#{$size}\:list-outside{
+            list-style-position: outside;
+        }
+    }
+    @else {
+        @each $state in $states {
+            .#{$size}\:list-inside\:#{$state}:#{$state}{
+                list-style-position: inside;
+            }
+    
+            .#{$size}\:list-outside\:#{$state}:#{$state}{
+                list-style-position: outside;
+            }   
+        }
+    }
+}
+
+@mixin placeholder-color($size: '', $states:''){
+    @if $size == '' and $states == ''{
+        @each $color, $value in $colors {
+            .placeholder-#{$color}::placeholder {
+                --opacity-placeholder: #{$opacity-100};
+                color: rgba($value,var(--opacity-placeholder));
+            }
+        }
+
+        @each $color, $value in $palette-colors {
+            .placeholder-#{$color}::placeholder {
+                --opacity-placeholder: #{$opacity-100};
+                color: rgba($value,var(--opacity-placeholder));
+            }
+        }
+        
+        @each $color, $value in $status-colors {
+            .placeholder-#{$color}::placeholder {
+                --opacity-placeholder: #{$opacity-100};
+                color: rgba($value,var(--opacity-placeholder));
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            @each $color, $value in $colors {
+                .placeholder-#{$color}\:#{$state}:#{$state}::placeholder {
+                    --opacity-placeholder: #{$opacity-100};
+                    color: rgba($value,var(--opacity-placeholder));
+                }
+            }
+    
+            @each $color, $value in $palette-colors {
+                .placeholder-#{$color}\:#{$state}:#{$state}::placeholder {
+                    --opacity-placeholder: #{$opacity-100};
+                    color: rgba($value,var(--opacity-placeholder));
+                }
+            }
+            
+            @each $color, $value in $status-colors {
+                .placeholder-#{$color}\:#{$state}:#{$state}::placeholder {
+                    --opacity-placeholder: #{$opacity-100};
+                    color: rgba($value,var(--opacity-placeholder));
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $color, $value in $colors {
+            .#{$size}\:placeholder-#{$color}::placeholder {
+                --opacity-placeholder: #{$opacity-100};
+                color: rgba($value,var(--opacity-placeholder));
+            }
+        }
+
+        @each $color, $value in $palette-colors {
+            .#{$size}\:placeholder-#{$color}::placeholder {
+                --opacity-placeholder: #{$opacity-100};
+                color: rgba($value,var(--opacity-placeholder));
+            }
+        }
+        
+        @each $color, $value in $status-colors {
+            .#{$size}\:placeholder-#{$color}::placeholder {
+                --opacity-placeholder: #{$opacity-100};
+                color: rgba($value,var(--opacity-placeholder));
+            }
+        }
+    }
+    @else {
+        @each $state in $states {
+            @each $color, $value in $colors {
+                .#{$size}\:placeholder-#{$color}\:#{$state}:#{$state}::placeholder {
+                    --opacity-placeholder: #{$opacity-100};
+                    color: rgba($value,var(--opacity-placeholder));
+                }
+            }
+    
+            @each $color, $value in $palette-colors {
+                .#{$size}\:placeholder-#{$color}\:#{$state}:#{$state}::placeholder {
+                    --opacity-placeholder: #{$opacity-100};
+                    color: rgba($value,var(--opacity-placeholder));
+                }
+            }
+            
+            @each $color, $value in $status-colors {
+                .#{$size}\:placeholder-#{$color}\:#{$state}:#{$state}::placeholder {
+                    --opacity-placeholder: #{$opacity-100};
+                    color: rgba($value,var(--opacity-placeholder));
+                }
+            }
+        }
+    }
+}
+
+@mixin placeholder-opacity($size: '', $states:''){
+    @if $size == '' and $states == ''{
+        @each $key, $value in $opacity-list {
+            .placeholder-#{$key}{
+                --opacity-placeholder: #{$value};
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            @each $key, $value in $opacity-list {
+                .placeholder-#{$key}\:#{$state}:#{$state}{
+                    --opacity-placeholder: #{$value};
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $key, $value in $opacity-list {
+            .#{$size}\:placeholder-#{$key}{
+                --opacity-placeholder: #{$value};
+            }
+        }
+    }
+    @else {
+        @each $state in $states {
+            @each $key, $value in $opacity-list {
+                .#{$size}\:placeholder-#{$key}\:#{$state}:#{$state}{
+                    --opacity-placeholder: #{$value};
+                }
+            }
+        }
+    }
+}
+
+@mixin text-align($size: '', $states:''){
+    @if $size == '' and $states == ''{
+        .text-left{
+            text-align: left;
+        }
+
+        .text-center{
+            text-align: center;
+        }
+
+        .text-right{
+            text-align: right;
+        }
+
+        .text-justify{
+            text-align: justify; 
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .text-left\:#{$state}:#{$state}{
+                text-align: left;
+            }
+    
+            .text-center\:#{$state}:#{$state}{
+                text-align: center;
+            }
+    
+            .text-right\:#{$state}:#{$state}{
+                text-align: right;
+            }
+    
+            .text-justify\:#{$state}:#{$state}{
+                text-align: justify; 
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:text-left{
+            text-align: left;
+        }
+
+        .#{$size}\:text-center{
+            text-align: center;
+        }
+
+        .#{$size}\:text-right{
+            text-align: right;
+        }
+
+        .#{$size}\:text-justify{
+            text-align: justify; 
+        }
+    }
+    @else {
+        @each $state in $states {
+            .#{$size}\:text-left\:#{$state}:#{$state}{
+                text-align: left;
+            }
+    
+            .#{$size}\:text-center\:#{$state}:#{$state}{
+                text-align: center;
+            }
+    
+            .#{$size}\:text-right\:#{$state}:#{$state}{
+                text-align: right;
+            }
+    
+            .#{$size}\:text-justify\:#{$state}:#{$state}{
+                text-align: justify; 
+            }
+        }
+    }
+}
+
+@mixin text-decoration($size: '', $states:''){
+    @if $size == '' and $states == ''{
+        .underline{
+            text-decoration: underline;
+        }
+        .line-through{
+            text-decoration: line-through;
+        }
+        .no-underline{
+            text-decoration: none;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .underline\:#{$state}:#{$state}{
+                text-decoration: underline;
+            }
+            .line-through\:#{$state}:#{$state}{
+                text-decoration: line-through;
+            }
+            .no-underline\:#{$state}:#{$state}{
+                text-decoration: none;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:underline{
+            text-decoration: underline;
+        }
+        .#{$size}\:line-through{
+            text-decoration: line-through;
+        }
+        .#{$size}\:no-underline{
+            text-decoration: none;
+        }
+    }
+    @else {
+        @each $state in $states {
+            .#{$size}\:underline\:#{$state}:#{$state}{
+                text-decoration: underline;
+            }
+            .#{$size}\:line-through\:#{$state}:#{$state}{
+                text-decoration: line-through;
+            }
+            .#{$size}\:no-underline\:#{$state}:#{$state}{
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+@mixin text-transform($size: '', $states:''){
+    @if $size == '' and $states == ''{
+        .uppercase{
+            text-transform: uppercase;
+        }
+        
+        .lowercase{
+            text-transform: lowercase;
+        }
+
+        .capitalize{
+            text-transform: capitalize;
+        }
+        
+        .normalcase{
+            text-transform: none;  
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .uppercase\:#{$state}:#{$state}{
+                text-transform: uppercase;
+            }
+            
+            .lowercase\:#{$state}:#{$state}{
+                text-transform: lowercase;
+            }
+    
+            .capitalize\:#{$state}:#{$state}{
+                text-transform: capitalize;
+            }
+            
+            .normalcase\:#{$state}:#{$state}{
+                text-transform: none;  
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:uppercase{
+            text-transform: uppercase;
+        }
+        
+        .#{$size}\:lowercase{
+            text-transform: lowercase;
+        }
+
+        .#{$size}\:capitalize{
+            text-transform: capitalize;
+        }
+        
+        .#{$size}\:normalcase{
+            text-transform: none;  
+        }
+    }
+    @else {
+        @each $state in $states {
+            .#{$size}\:uppercase\:#{$state}:#{$state}{
+                text-transform: uppercase;
+            }
+            
+            .#{$size}\:lowercase\:#{$state}:#{$state}{
+                text-transform: lowercase;
+            }
+    
+            .#{$size}\:capitalize\:#{$state}:#{$state}{
+                text-transform: capitalize;
+            }
+            
+            .#{$size}\:normalcase\:#{$state}:#{$state}{
+                text-transform: none;  
+            }
+        }
+    }
+}
+
+@mixin text-vertical-align($size: '', $states:''){
+    @if $size == '' and $states == ''{
+        .v-align-baseline{
+            vertical-align: baseline;
+        }
+
+        .v-align-top{
+            vertical-align: top;
+        }
+
+        .v-align-middle{
+            vertical-align: middle;
+        }
+
+        .v-align-bottom{
+            vertical-align: bottom;
+        }
+
+        .v-align-text-top{
+            vertical-align: text-top;
+        }
+
+        .v-align-text-bottom{
+            vertical-align: text-bottom;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states{
+            .v-align-baseline\:#{$state}:#{$state}{
+                vertical-align: baseline;
+            }
+    
+            .v-align-top\:#{$state}:#{$state}{
+                vertical-align: top;
+            }
+    
+            .v-align-middle\:#{$state}:#{$state}{
+                vertical-align: middle;
+            }
+    
+            .v-align-bottom\:#{$state}:#{$state}{
+                vertical-align: bottom;
+            }
+    
+            .v-align-text-top\:#{$state}:#{$state}{
+                vertical-align: text-top;
+            }
+    
+            .v-align-text-bottom\:#{$state}:#{$state}{
+                vertical-align: text-bottom;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:v-align-baseline{
+            vertical-align: baseline;
+        }
+
+        .#{$size}\:v-align-top{
+            vertical-align: top;
+        }
+
+        .#{$size}\:v-align-middle{
+            vertical-align: middle;
+        }
+
+        .#{$size}\:v-align-bottom{
+            vertical-align: bottom;
+        }
+
+        .#{$size}\:v-align-text-top{
+            vertical-align: text-top;
+        }
+
+        .#{$size}\:v-align-text-bottom{
+            vertical-align: text-bottom;
+        }
+    }
+    @else {
+        @each $state in $states{
+            .v-align-baseline\:#{$state}:#{$state}{
+                vertical-align: baseline;
+            }
+    
+            .v-align-top\:#{$state}:#{$state}{
+                vertical-align: top;
+            }
+    
+            .v-align-middle\:#{$state}:#{$state}{
+                vertical-align: middle;
+            }
+    
+            .v-align-bottom\:#{$state}:#{$state}{
+                vertical-align: bottom;
+            }
+    
+            .v-align-text-top\:#{$state}:#{$state}{
+                vertical-align: text-top;
+            }
+    
+            .v-align-text-bottom\:#{$state}:#{$state}{
+                vertical-align: text-bottom;
+            }
+        }
+    }
+}
+
+@mixin whitespace($size: '', $states:''){
+    @if $size == '' and $states == ''{
+        .whitespace-normal{
+            white-space: normal;
+        }
+        .whitespace-nowrap{
+            white-space: nowrap;
+        }
+        .whitespace-pre{
+            white-space: pre;
+        }
+        .whitespace-pre-line{
+            white-space: pre-line;
+        }
+        .whitespace-pre-wrap{
+            white-space: pre-wrap;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states{
+            .whitespace-normal\:#{$state}:#{$state}{
+                white-space: normal;
+            }
+            .whitespace-nowrap\:#{$state}:#{$state}{
+                white-space: nowrap;
+            }
+            .whitespace-pre\:#{$state}:#{$state}{
+                white-space: pre;
+            }
+            .whitespace-pre-line\:#{$state}:#{$state}{
+                white-space: pre-line;
+            }
+            .whitespace-pre-wrap\:#{$state}:#{$state}{
+                white-space: pre-wrap;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:whitespace-normal{
+            white-space: normal;
+        }
+        .#{$size}\:whitespace-nowrap{
+            white-space: nowrap;
+        }
+        .#{$size}\:whitespace-pre{
+            white-space: pre;
+        }
+        .#{$size}\:whitespace-pre-line{
+            white-space: pre-line;
+        }
+        .#{$size}\:whitespace-pre-wrap{
+            white-space: pre-wrap;
+        }
+    }
+    @else {
+        @each $state in $states{
+            .#{$size}\:whitespace-normal\:#{$state}:#{$state}{
+                white-space: normal;
+            }
+            .#{$size}\:whitespace-nowrap\:#{$state}:#{$state}{
+                white-space: nowrap;
+            }
+            .#{$size}\:whitespace-pre\:#{$state}:#{$state}{
+                white-space: pre;
+            }
+            .#{$size}\:whitespace-pre-line\:#{$state}:#{$state}{
+                white-space: pre-line;
+            }
+            .#{$size}\:whitespace-pre-wrap\:#{$state}:#{$state}{
+                white-space: pre-wrap;
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+@mixin shadow($size: '', $states: ''){
+    @if $size == '' and $states == ''{
+        @each $shadow, $value in $shadows {
+            .shadow-#{$shadow} {
+                --shadow: #{$value};
+                box-shadow: var(--offset-shadow, 0 0 #0000), var(--second-shadow, 0 0 #0000), var(--shadow);
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $shadow, $value in $shadows{
+            @each $state in $states {
+                .shadow-#{$shadow}\:#{$state}:#{$state} {
+                    --shadow: #{$value};
+                    box-shadow: var(--offset-shadow, 0 0 #0000), var(--second-shadow, 0 0 #0000), var(--shadow);
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $shadow, $value in $shadows {
+            .#{$size}\:shadow-#{$shadow} {
+                --shadow: #{$value};
+                box-shadow: var(--offset-shadow, 0 0 #0000), var(--second-shadow, 0 0 #0000), var(--shadow);
+            }
+        }
+    }
+    @else{
+        @each $shadow, $value in $shadows{
+            @each $state in $states {
+                .#{$size}\:shadow-#{$shadow}\:#{$state}:#{$state} {
+                    --shadow: #{$value};
+                    box-shadow: var(--offset-shadow, 0 0 #0000), var(--second-shadow, 0 0 #0000), var(--shadow);
+                }
+            }
+        }
+    }
+}

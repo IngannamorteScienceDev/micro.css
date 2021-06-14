@@ -1,0 +1,158 @@
+@mixin overflow($size: '', $states: ''){
+    @if $size == '' and $states == ''{
+        .overflow-auto{
+            overflow: auto;
+        }
+        .overflow-hidden{
+            overflow: hidden;
+        }
+        .overflow-visible{
+            overflow: visible;
+        }
+        .overflow-scroll{
+            overflow: scroll;
+        }
+        .overflow-x-auto{
+            overflow-x: auto;
+        }
+        .overflow-y-auto{
+            overflow-y: auto;
+        }
+        .overflow-x-hidden{
+            overflow-x: hidden;
+        }
+        .overflow-y-hidden{
+            overflow-y: hidden;
+        }
+        .overflow-x-visible{
+            overflow-x: visible;
+        }
+        .overflow-y-visible{
+            overflow-y: visible;
+        }
+        .overflow-x-scroll{
+            overflow-x: scroll;
+        }
+        .overflow-y-scroll{
+            overflow-y: scroll;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states{
+            .overflow-auto\:#{$state}:#{$state}{
+                overflow: auto;
+            }
+            .overflow-hidden\:#{$state}:#{$state}{
+                overflow: hidden;
+            }
+            .overflow-visible\:#{$state}:#{$state}{
+                overflow: visible;
+            }
+            .overflow-scroll\:#{$state}:#{$state}{
+                overflow: scroll;
+            }
+            .overflow-x-auto\:#{$state}:#{$state}{
+                overflow-x: auto;
+            }
+            .overflow-y-auto\:#{$state}:#{$state}{
+                overflow-y: auto;
+            }
+            .overflow-x-hidden\:#{$state}:#{$state}{
+                overflow-x: hidden;
+            }
+            .overflow-y-hidden\:#{$state}:#{$state}{
+                overflow-y: hidden;
+            }
+            .overflow-x-visible\:#{$state}:#{$state}{
+                overflow-x: visible;
+            }
+            .overflow-y-visible\:#{$state}:#{$state}{
+                overflow-y: visible;
+            }
+            .overflow-x-scroll\:#{$state}:#{$state}{
+                overflow-x: scroll;
+            }
+            .overflow-y-scroll\:#{$state}:#{$state}{
+                overflow-y: scroll;
+            }
+        }
+    }
+    @else if $states == '' {
+        .#{$size}\:overflow-auto{
+            overflow: auto;
+        }
+        .#{$size}\:overflow-hidden{
+            overflow: hidden;
+        }
+        .#{$size}\:overflow-visible{
+            overflow: visible;
+        }
+        .#{$size}\:overflow-scroll{
+            overflow: scroll;
+        }
+        .#{$size}\:overflow-x-auto{
+            overflow-x: auto;
+        }
+        .#{$size}\:overflow-y-auto{
+            overflow-y: auto;
+        }
+        .#{$size}\:overflow-x-hidden{
+            overflow-x: hidden;
+        }
+        .#{$size}\:overflow-y-hidden{
+            overflow-y: hidden;
+        }
+        .#{$size}\:overflow-x-visible{
+            overflow-x: visible;
+        }
+        .#{$size}\:overflow-y-visible{
+            overflow-y: visible;
+        }
+        .#{$size}\:overflow-x-scroll{
+            overflow-x: scroll;
+        }
+        .#{$size}\:overflow-y-scroll{
+            overflow-y: scroll;
+        }
+    }
+    @else {
+        @each $state in $states{
+            .#{$size}\:overflow-auto\:#{$state}:#{$state}{
+                overflow: auto;
+            }
+            .#{$size}\:overflow-hidden\:#{$state}:#{$state}{
+                overflow: hidden;
+            }
+            .#{$size}\:overflow-visible\:#{$state}:#{$state}{
+                overflow: visible;
+            }
+            .#{$size}\:overflow-scroll\:#{$state}:#{$state}{
+                overflow: scroll;
+            }
+            .#{$size}\:overflow-x-auto\:#{$state}:#{$state}{
+                overflow-x: auto;
+            }
+            .#{$size}\:overflow-y-auto\:#{$state}:#{$state}{
+                overflow-y: auto;
+            }
+            .#{$size}\:overflow-x-hidden\:#{$state}:#{$state}{
+                overflow-x: hidden;
+            }
+            .#{$size}\:overflow-y-hidden\:#{$state}:#{$state}{
+                overflow-y: hidden;
+            }
+            .#{$size}\:overflow-x-visible\:#{$state}:#{$state}{
+                overflow-x: visible;
+            }
+            .#{$size}\:overflow-y-visible\:#{$state}:#{$state}{
+                overflow-y: visible;
+            }
+            .#{$size}\:overflow-x-scroll\:#{$state}:#{$state}{
+                overflow-x: scroll;
+            }
+            .#{$size}\:overflow-y-scroll\:#{$state}:#{$state}{
+                overflow-y: scroll;
+            }
+        }
+    }
+}

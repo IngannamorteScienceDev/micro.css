@@ -1,0 +1,60 @@
+@mixin float($size: '',$states: ''){
+    @if $size == '' and $states == ''{
+        .float-left{
+            float: left;
+        }
+
+        .float-right{
+            float:  right;
+        }
+        
+        .float-none{
+            float: left;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .float-left\:#{$state}:#{$state}{
+                float: left;
+            }
+
+            .float-right\:#{$state}:#{$state}{
+                float:  right;
+            }
+            
+            .float-none\:#{$state}:#{$state}{
+                float: left;
+            }
+        }
+        
+    }
+    @else if $states == ''{
+        .#{$size}\:float-left{
+            float: left;
+        }
+
+        .#{$size}\:float-right{
+            float:  right;
+        }
+        
+        .#{$size}\:float-none{
+            float: left;
+        }
+    }
+    @else{
+        @each $state in $states {
+            .#{$size}\:float-left\:#{$state}:#{$state}{
+                float: left;
+            }
+
+            .#{$size}\:float-right\:#{$state}:#{$state}{
+                float:  right;
+            }
+            
+            .#{$size}\:float-none\:#{$state}:#{$state}{
+                float: left;
+            }
+        }
+        
+    }
+}

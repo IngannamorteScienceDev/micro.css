@@ -1,0 +1,645 @@
+@mixin border-radius($size:'', $states: ''){
+    @if $size == '' and $states == ''{
+        @each $key, $value in $radius {
+            .border-rd#{$key}{
+                border-radius: #{$value};
+            }
+            .border-rd-t#{$key}{
+                border-top-left-radius: #{$value};
+                border-top-right-radius: #{$value};
+            }
+            .border-rd-r#{$key}{
+                border-top-right-radius: #{$value};
+                border-bottom-right-radius: #{$value};
+            }
+            .border-rd-b#{$key}{
+                border-bottom-left-radius: #{$value};
+                border-bottom-right-radius: #{$value};
+            }
+            .border-rd-l#{$key}{
+                border-top-left-radius: #{$value};
+                border-bottom-left-radius: #{$value};
+            }
+            .border-rd-tr#{$key}{
+                border-top-right-radius: #{$value};
+            }
+            .border-rd-tl#{$key}{
+                border-top-left-radius: #{$value};
+            }
+            .border-rd-br#{$key}{
+                border-bottom-right-radius: #{$value};
+            }
+            .border-rd-bl#{$key}{
+                border-bottom-left-radius: #{$value};
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            @each $key, $value in $radius {
+                .border-rd#{$key}\:#{$state}:#{$state}{
+                    border-radius: #{$value};
+                }
+                .border-rd-t#{$key}\:#{$state}:#{$state}{
+                    border-top-left-radius: #{$value};
+                    border-top-right-radius: #{$value};
+                }
+                .border-rd-r#{$key}\:#{$state}:#{$state}{
+                    border-top-right-radius: #{$value};
+                    border-bottom-right-radius: #{$value};
+                }
+                .border-rd-b#{$key}\:#{$state}:#{$state}{
+                    border-bottom-left-radius: #{$value};
+                    border-bottom-right-radius: #{$value};
+                }
+                .border-rd-l#{$key}\:#{$state}:#{$state}{
+                    border-top-left-radius: #{$value};
+                    border-bottom-left-radius: #{$value};
+                }
+                .border-rd-tr#{$key}\:#{$state}:#{$state}{
+                    border-top-right-radius: #{$value};
+                }
+                .border-rd-tl#{$key}\:#{$state}:#{$state}{
+                    border-top-left-radius: #{$value};
+                }
+                .border-rd-br#{$key}\:#{$state}:#{$state}{
+                    border-bottom-right-radius: #{$value};
+                }
+                .border-rd-bl#{$key}\:#{$state}:#{$state}{
+                    border-bottom-left-radius: #{$value};
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $key, $value in $radius {
+            .#{$size}\:border-rd#{$key}{
+                border-radius: #{$value};
+            }
+            .#{$size}\:border-rd-t#{$key}{
+                border-top-left-radius: #{$value};
+                border-top-right-radius: #{$value};
+            }
+            .#{$size}\:border-rd-r#{$key}{
+                border-top-right-radius: #{$value};
+                border-bottom-right-radius: #{$value};
+            }
+            .#{$size}\:border-rd-b#{$key}{
+                border-bottom-left-radius: #{$value};
+                border-bottom-right-radius: #{$value};
+            }
+            .#{$size}\:border-rd-l#{$key}{
+                border-top-left-radius: #{$value};
+                border-bottom-left-radius: #{$value};
+            }
+            .#{$size}\:border-rd-tr#{$key}{
+                border-top-right-radius: #{$value};
+            }
+            .#{$size}\:border-rd-tl#{$key}{
+                border-top-left-radius: #{$value};
+            }
+            .#{$size}\:border-rd-br#{$key}{
+                border-bottom-right-radius: #{$value};
+            }
+            .#{$size}\:border-rd-bl#{$key}{
+                border-bottom-left-radius: #{$value};
+            }   
+        }
+    }
+    @else {
+        @each $state in $states {
+            @each $key, $value in $radius {
+                .#{$size}\:border-rd#{$key}\:#{$state}:#{$state}{
+                    border-radius: #{$value};
+                }
+                .#{$size}\:border-rd-t#{$key}\:#{$state}:#{$state}{
+                    border-top-left-radius: #{$value};
+                    border-top-right-radius: #{$value};
+                }
+                .#{$size}\:border-rd-r#{$key}\:#{$state}:#{$state}{
+                    border-top-right-radius: #{$value};
+                    border-bottom-right-radius: #{$value};
+                }
+                .#{$size}\:border-rd-b#{$key}\:#{$state}:#{$state}{
+                    border-bottom-left-radius: #{$value};
+                    border-bottom-right-radius: #{$value};
+                }
+                .#{$size}\:border-rd-l#{$key}\:#{$state}:#{$state}{
+                    border-top-left-radius: #{$value};
+                    border-bottom-left-radius: #{$value};
+                }
+                .#{$size}\:border-rd-tr#{$key}\:#{$state}:#{$state}{
+                    border-top-right-radius: #{$value};
+                }
+                .#{$size}\:border-rd-tl#{$key}\:#{$state}:#{$state}{
+                    border-top-left-radius: #{$value};
+                }
+                .#{$size}\:border-rd-br#{$key}\:#{$state}:#{$state}{
+                    border-bottom-right-radius: #{$value};
+                }
+                .#{$size}\:border-rd-bl#{$key}\:#{$state}:#{$state}{
+                    border-bottom-left-radius: #{$value};
+                }
+            }
+        }
+    }
+}
+
+@mixin border-width($size:'', $states: ''){
+    @if $size == '' and $states == ''{
+        @each $width, $value in $border-widths {
+            .border-#{$width}{
+                border-width: #{$value};
+            }
+            .border-t-#{$width}{
+                border-top-width: #{$value};
+            }
+            .border-r-#{$width}{
+                border-right-width: #{$value};
+            }
+            .border-b-#{$width}{
+                border-bottom-width: #{$value};
+            }
+            .border-l-#{$width}{
+                border-left-width: #{$value};
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            @each $width, $value in $border-widths {
+                .border-#{$width}\:#{$state}:#{$state}{
+                    border-width: #{$value};
+                }
+                .border-t-#{$width}\:#{$state}:#{$state}{
+                    border-top-width: #{$value};
+                }
+                .border-r-#{$width}\:#{$state}:#{$state}{
+                    border-right-width: #{$value};
+                }
+                .border-b-#{$width}\:#{$state}:#{$state}{
+                    border-bottom-width: #{$value};
+                }
+                .border-l-#{$width}\:#{$state}:#{$state}{
+                    border-left-width: #{$value};
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $width, $value in $border-widths {
+            .#{$size}\:border-#{$width}{
+                border-width: #{$value};
+            }
+            .#{$size}\:border-t-#{$width}{
+                border-top-width: #{$value};
+            }
+            .#{$size}\:border-r-#{$width}{
+                border-right-width: #{$value};
+            }
+            .#{$size}\:border-b-#{$width}{
+                border-bottom-width: #{$value};
+            }
+            .#{$size}\:border-l-#{$width}{
+                border-left-width: #{$value};
+            }
+        }
+    }
+    @else {
+        @each $state in $states {
+            @each $width, $value in $border-widths {
+                .border-#{$width}\:#{$state}:#{$state}{
+                    border-width: #{$value};
+                }
+                .border-t-#{$width}\:#{$state}:#{$state}{
+                    border-top-width: #{$value};
+                }
+                .border-r-#{$width}\:#{$state}:#{$state}{
+                    border-right-width: #{$value};
+                }
+                .border-b-#{$width}\:#{$state}:#{$state}{
+                    border-bottom-width: #{$value};
+                }
+                .border-l-#{$width}\:#{$state}:#{$state}{
+                    border-left-width: #{$value};
+                }
+            }
+        }
+    }
+}
+
+@mixin border-color($size: '', $states: ''){
+    @if $size == '' and $states == ''{
+        @each $color, $value in $palette-colors {
+            .border-#{$color} {
+                --opacity-border: #{$opacity-100};
+                border-color: rgba($value,var(--opacity-border));
+            }
+        }
+        @each $color, $value in $status-colors {
+            .border-#{$color} {
+                --opacity-border: #{$opacity-100};
+                border-color: rgba($value,var(--opacity-border));
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            @each $color, $value in $palette-colors {
+                .border-#{$color}\:#{$state}:#{$state} {
+                    --opacity-border: #{$opacity-100};
+                    border-color: rgba($value,var(--opacity-border));
+                }
+            }
+            @each $color, $value in $status-colors {
+                .border-#{$color}\:#{$state}:#{$state} {
+                    --opacity-border: #{$opacity-100};
+                    border-color: rgba($value,var(--opacity-border));
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $color, $value in $palette-colors {
+            .#{$size}\:border-#{$color} {
+                --opacity-border: #{$opacity-100};
+                border-color: rgba($value,var(--opacity-border));
+            }
+        }
+        @each $color, $value in $status-colors {
+            .#{$size}\:border-#{$color} {
+                --opacity-border: #{$opacity-100};
+                border-color: rgba($value,var(--opacity-border));
+            }
+        }
+    }
+    @else {
+        @each $state in $states {
+            @each $color, $value in $palette-colors {
+                .#{$size}\:border-#{$color}\:#{$state}:#{$state} {
+                    --opacity-border: #{$opacity-100};
+                    border-color: rgba($value,var(--opacity-border));
+                }
+            }
+            @each $color, $value in $status-colors {
+                .#{$size}\:border-#{$color}\:#{$state}:#{$state} {
+                    --opacity-border: #{$opacity-100};
+                    border-color: rgba($value,var(--opacity-border));
+                }
+            }
+        }
+        
+    }
+}
+
+@mixin border-opacity($size: '', $states: '') {
+    @if $size == '' and $states == ''{
+        @each $key, $value in $opacity-list{
+            .border-#{$key}{
+                --opacity-border: #{$value};
+            }
+        }
+    }
+    @if $size == ''{
+        @each $state in $states {
+            @each $key, $value in $opacity-list{
+                .border-#{$key}\:#{$state}{
+                    --opacity-border: #{$value};
+                }
+            }   
+        }
+    }
+    @if $states == ''{
+        @each $key, $value in $opacity-list{
+            .#{$size}\:border-#{$key}{
+                --opacity-border: #{$value};
+            }
+        }
+    }
+    @else{
+        @each $state in $states {
+            @each $key, $value in $opacity-list{
+                .#{$size}\:border-#{$key}\:#{$state}{
+                    --opacity-border: #{$value};
+                }
+            }   
+        }
+    }
+}
+
+@mixin border-style ($size: '', $states: ''){
+    @if $size == '' and $states == ''{
+        .border-none{
+            border-style: none;
+        }
+        .border-solid{
+            border-style: solid;
+        }
+        .border-dashed{
+            border-style: dashed;
+        }
+        .border-dotted{
+            border-style: dotted;
+        }
+        .border-double{
+            border-style: double;
+        }
+        .border-t-none{
+            border-top-style: none;
+        }
+        .border-t-solid{
+            border-top-style: solid;
+        }
+        .border-t-dashed{
+            border-top-style: dashed;
+        }
+        .border-t-dotted{
+            border-top-style: dotted;
+        }
+        .border-t-double{
+            border-top-style: double;
+        }
+        .border-r-none{
+            border-right-style: none;
+        }
+        .border-r-solid{
+            border-right-style: solid;
+        }
+        .border-r-dashed{
+            border-right-style: dashed;
+        }
+        .border-r-dotted{
+            border-right-style: dotted;
+        }
+        .border-r-double{
+            border-right-style: double;
+        }
+        .border-b-none{
+            border-bottom-style: none;
+        }
+        .border-b-solid{
+            border-bottom-style: solid;
+        }
+        .border-b-dashed{
+            border-bottom-style: dashed;
+        }
+        .border-b-dotted{
+            border-bottom-style: dotted;
+        }
+        .border-b-double{
+            border-bottom-style: double;
+        }
+        .border-l-none{
+            border-left-style: none;
+        }
+        .border-l-solid{
+            border-left-style: solid;
+        }
+        .border-l-dashed{
+            border-left-style: dashed;
+        }
+        .border-l-dotted{
+            border-left-style: dotted;
+        }
+        .border-l-double{
+            border-left-style: double;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .border-none\:#{$state}:#{$state}{
+                border-style: none;
+            }
+            .border-solid\:#{$state}:#{$state}{
+                border-style: solid;
+            }
+            .border-dashed\:#{$state}:#{$state}{
+                border-style: dashed;
+            }
+            .border-dotted\:#{$state}:#{$state}{
+                border-style: dotted;
+            }
+            .border-double\:#{$state}:#{$state}{
+                border-style: double;
+            }
+            .border-t-none\:#{$state}:#{$state}{
+                border-top-style: none;
+            }
+            .border-t-solid\:#{$state}:#{$state}{
+                border-top-style: solid;
+            }
+            .border-t-dashed\:#{$state}:#{$state}{
+                border-top-style: dashed;
+            }
+            .border-t-dotted\:#{$state}:#{$state}{
+                border-top-style: dotted;
+            }
+            .border-t-double\:#{$state}:#{$state}{
+                border-top-style: double;
+            }
+            .border-r-none\:#{$state}:#{$state}{
+                border-right-style: none;
+            }
+            .border-r-solid\:#{$state}:#{$state}{
+                border-right-style: solid;
+            }
+            .border-r-dashed\:#{$state}:#{$state}{
+                border-right-style: dashed;
+            }
+            .border-r-dotted\:#{$state}:#{$state}{
+                border-right-style: dotted;
+            }
+            .border-r-double\:#{$state}:#{$state}{
+                border-right-style: double;
+            }
+            .border-b-none\:#{$state}:#{$state}{
+                border-bottom-style: none;
+            }
+            .border-b-solid\:#{$state}:#{$state}{
+                border-bottom-style: solid;
+            }
+            .border-b-dashed\:#{$state}:#{$state}{
+                border-bottom-style: dashed;
+            }
+            .border-b-dotted\:#{$state}:#{$state}{
+                border-bottom-style: dotted;
+            }
+            .border-b-double\:#{$state}:#{$state}{
+                border-bottom-style: double;
+            }
+            .border-l-none\:#{$state}:#{$state}{
+                border-left-style: none;
+            }
+            .border-l-solid\:#{$state}:#{$state}{
+                border-left-style: solid;
+            }
+            .border-l-dashed\:#{$state}:#{$state}{
+                border-left-style: dashed;
+            }
+            .border-l-dotted\:#{$state}:#{$state}{
+                border-left-style: dotted;
+            }
+            .border-l-double\:#{$state}:#{$state}{
+                border-left-style: double;
+            }
+        }
+        
+    }
+    @else if $states == ''{
+        .#{$size}\:border-none{
+            border-style: none;
+        }
+        .#{$size}\:border-solid{
+            border-style: solid;
+        }
+        .#{$size}\:border-dashed{
+            border-style: dashed;
+        }
+        .#{$size}\:border-dotted{
+            border-style: dotted;
+        }
+        .#{$size}\:border-double{
+            border-style: double;
+        }
+        .#{$size}\:border-t-none{
+            border-top-style: none;
+        }
+        .#{$size}\:border-t-solid{
+            border-top-style: solid;
+        }
+        .#{$size}\:border-t-dashed{
+            border-top-style: dashed;
+        }
+        .#{$size}\:border-t-dotted{
+            border-top-style: dotted;
+        }
+        .#{$size}\:border-t-double{
+            border-top-style: double;
+        }
+        .#{$size}\:border-r-none{
+            border-right-style: none;
+        }
+        .#{$size}\:border-r-solid{
+            border-right-style: solid;
+        }
+        .#{$size}\:border-r-dashed{
+            border-right-style: dashed;
+        }
+        .#{$size}\:border-r-dotted{
+            border-right-style: dotted;
+        }
+        .#{$size}\:border-r-double{
+            border-right-style: double;
+        }
+        .#{$size}\:border-b-none{
+            border-bottom-style: none;
+        }
+        .#{$size}\:border-b-solid{
+            border-bottom-style: solid;
+        }
+        .#{$size}\:border-b-dashed{
+            border-bottom-style: dashed;
+        }
+        .#{$size}\:border-b-dotted{
+            border-bottom-style: dotted;
+        }
+        .#{$size}\:border-b-double{
+            border-bottom-style: double;
+        }
+        .#{$size}\:border-l-none{
+            border-left-style: none;
+        }
+        .#{$size}\:border-l-solid{
+            border-left-style: solid;
+        }
+        .#{$size}\:border-l-dashed{
+            border-left-style: dashed;
+        }
+        .#{$size}\:border-l-dotted{
+            border-left-style: dotted;
+        }
+        .#{$size}\:border-l-double{
+            border-left-style: double;
+        }
+    }
+    @else{
+        @each $state in $states{
+            .#{$size}\:border-none\:#{$state}:#{$state}{
+                border-style: none;
+            }
+            .#{$size}\:border-solid\:#{$state}:#{$state}{
+                border-style: solid;
+            }
+            .#{$size}\:border-dashed\:#{$state}:#{$state}{
+                border-style: dashed;
+            }
+            .#{$size}\:border-dotted\:#{$state}:#{$state}{
+                border-style: dotted;
+            }
+            .#{$size}\:border-double\:#{$state}:#{$state}{
+                border-style: double;
+            }
+            .#{$size}\:border-t-none\:#{$state}:#{$state}{
+                border-top-style: none;
+            }
+            .#{$size}\:border-t-solid\:#{$state}:#{$state}{
+                border-top-style: solid;
+            }
+            .#{$size}\:border-t-dashed\:#{$state}:#{$state}{
+                border-top-style: dashed;
+            }
+            .#{$size}\:border-t-dotted\:#{$state}:#{$state}{
+                border-top-style: dotted;
+            }
+            .#{$size}\:border-t-double\:#{$state}:#{$state}{
+                border-top-style: double;
+            }
+            .#{$size}\:border-r-none\:#{$state}:#{$state}{
+                border-right-style: none;
+            }
+            .#{$size}\:border-r-solid\:#{$state}:#{$state}{
+                border-right-style: solid;
+            }
+            .#{$size}\:border-r-dashed\:#{$state}:#{$state}{
+                border-right-style: dashed;
+            }
+            .#{$size}\:border-r-dotted\:#{$state}:#{$state}{
+                border-right-style: dotted;
+            }
+            .#{$size}\:border-r-double\:#{$state}:#{$state}{
+                border-right-style: double;
+            }
+            .#{$size}\:border-b-none\:#{$state}:#{$state}{
+                border-bottom-style: none;
+            }
+            .#{$size}\:border-b-solid\:#{$state}:#{$state}{
+                border-bottom-style: solid;
+            }
+            .#{$size}\:border-b-dashed\:#{$state}:#{$state}{
+                border-bottom-style: dashed;
+            }
+            .#{$size}\:border-b-dotted\:#{$state}:#{$state}{
+                border-bottom-style: dotted;
+            }
+            .#{$size}\:border-b-double\:#{$state}:#{$state}{
+                border-bottom-style: double;
+            }
+            .#{$size}\:border-l-none\:#{$state}:#{$state}{
+                border-left-style: none;
+            }
+            .#{$size}\:border-l-solid\:#{$state}:#{$state}{
+                border-left-style: solid;
+            }
+            .#{$size}\:border-l-dashed\:#{$state}:#{$state}{
+                border-left-style: dashed;
+            }
+            .#{$size}\:border-l-dotted\:#{$state}:#{$state}{
+                border-left-style: dotted;
+            }
+            .#{$size}\:border-l-double\:#{$state}:#{$state}{
+                border-left-style: double;
+            }
+        }
+        
+    }
+}

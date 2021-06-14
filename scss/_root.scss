@@ -1,0 +1,14 @@
+:root{
+  // Custom variable values only support SassScript inside `#{}`.
+  @each $color, $value in $colors {
+    --#{$color}: #{$value};
+  }
+
+  @each $color, $value in $status-colors {
+    --#{$color}: #{$value};
+  }
+
+  --shadow: 0 0 #0000;
+  --offset-shadow: 0 0 #0000;
+  --second-shadow: 0 0 #0000;
+}

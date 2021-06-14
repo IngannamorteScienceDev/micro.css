@@ -1,0 +1,42 @@
+@mixin box-sizing($size: '', $states: ''){
+    @if $size == '' and $states == '' {
+        .border-box{
+            box-sizing: border-box;
+        }
+
+        .content-box{
+            box-sizing: content-box;
+        }
+    }
+    @else if $size == ''{
+        @each $value in $states{
+            .border-box:#{$value}{
+                box-sizing: border-box;
+            }
+
+            .content-box:#{$value}{
+                box-sizing: content-box;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:border-box{
+            box-sizing: border-box;
+        }
+
+        .#{$size}\:content-box{
+            box-sizing: content-box;
+        }
+    }
+    @else{
+        @each $value in $states{
+            .#{$size}\:border-box:#{$value}{
+                box-sizing: border-box;
+            }
+
+            .#{$size}\:content-box:#{$value}{
+                box-sizing: content-box;
+            }
+        }
+    }
+}

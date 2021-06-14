@@ -1,0 +1,90 @@
+@mixin position($size: '', $states: '') {
+    @if $size == '' and $states == ''{
+        .absolute{
+            position: absolute;
+        }
+
+        .fixed{
+            position: fixed;
+        }
+
+        .relative{
+            position: relative;
+        }
+
+        .static{
+            position: static;
+        }
+
+        .sticky{
+            position: sticky;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .absolute\:#{$state}:#{$state}{
+                position: absolute;
+            }
+    
+            .fixed\:#{$state}:#{$state}{
+                position: fixed;
+            }
+    
+            .relative\:#{$state}:#{$state}{
+                position: relative;
+            }
+    
+            .static\:#{$state}:#{$state}{
+                position: static;
+            }
+    
+            .sticky\:#{$state}:#{$state}{
+                position: sticky;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:absolute{
+            position: absolute;
+        }
+
+        .#{$size}\:fixed{
+            position: fixed;
+        }
+
+        .#{$size}\:relative{
+            position: relative;
+        }
+
+        .#{$size}\:static{
+            position: static;
+        }
+
+        .#{$size}\:sticky{
+            position: sticky;
+        }
+    }
+    @else {
+        @each $state in $states {
+            .#{$size}\:absolute\:#{$state}:#{$state}{
+                position: absolute;
+            }
+    
+            .#{$size}\:fixed\:#{$state}:#{$state}{
+                position: fixed;
+            }
+    
+            .#{$size}\:relative\:#{$state}:#{$state}{
+                position: relative;
+            }
+    
+            .#{$size}\:static\:#{$state}:#{$state}{
+                position: static;
+            }
+    
+            .#{$size}\:sticky\:#{$state}:#{$state}{
+                position: sticky;
+            }
+        }
+    }
+}

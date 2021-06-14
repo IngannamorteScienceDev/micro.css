@@ -1,0 +1,462 @@
+@mixin background-attachment($size:'', $states: ''){
+    @if $size == '' and $states == ''{
+        .bg-att-fixed{
+            background-attachment: fixed;
+        }
+        .bg-att-local{
+            background-attachment: local;
+        }
+        .bg-att-scroll{
+            background-attachment: scroll;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .bg-att-fixed\:#{$state}:#{$state}{
+                background-attachment: fixed;
+            }
+            .bg-att-local\:#{$state}:#{$state}{
+                background-attachment: local;
+            }
+            .bg-att-scroll\:#{$state}:#{$state}{
+                background-attachment: scroll;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:bg-att-fixed{
+            background-attachment: fixed;
+        }
+        .#{$size}\:bg-att-local{
+            background-attachment: local;
+        }
+        .#{$size}\:bg-att-scroll{
+            background-attachment: scroll;
+        }
+    }
+    @else {
+        @each $state in $states {
+            .#{$size}\:bg-att-fixed\:#{$state}:#{$state}{
+                background-attachment: fixed;
+            }
+            .#{$size}\:bg-att-local\:#{$state}:#{$state}{
+                background-attachment: local;
+            }
+            .#{$size}\:bg-att-scroll\:#{$state}:#{$state}{
+                background-attachment: scroll;
+            }
+        }
+    }
+}
+
+@mixin background-clip($size:'', $states: ''){
+    @if $size == '' and $states == ''{
+        .bg-clip-border{
+            background-clip: border-box;
+        }
+        .bg-clip-padding{
+            background-clip: padding-box;
+        }
+        .bg-clip-content{
+            background-clip: content-box;
+        }
+        .bg-clip-text{
+            background-clip: text;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .bg-clip-border\:#{$state}:#{$state}{
+                background-clip: border-box;
+            }
+            .bg-clip-padding\:#{$state}:#{$state}{
+                background-clip: padding-box;
+            }
+            .bg-clip-content\:#{$state}:#{$state}{
+                background-clip: content-box;
+            }
+            .bg-clip-text\:#{$state}:#{$state}{
+                background-clip: text;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:bg-clip-border{
+            background-clip: border-box;
+        }
+        .#{$size}\:bg-clip-padding{
+            background-clip: padding-box;
+        }
+        .#{$size}\:bg-clip-content{
+            background-clip: content-box;
+        }
+        .#{$size}\:bg-clip-text{
+            background-clip: text;
+        }
+    }
+    @else {
+        @each $state in $states {
+            .#{$size}\:bg-clip-border\:#{$state}:#{$state}{
+                background-clip: border-box;
+            }
+            .#{$size}\:bg-clip-padding\:#{$state}:#{$state}{
+                background-clip: padding-box;
+            }
+            .#{$size}\:bg-clip-content\:#{$state}:#{$state}{
+                background-clip: content-box;
+            }
+            .#{$size}\:bg-clip-text\:#{$state}:#{$state}{
+                background-clip: text;
+            }
+        }
+    }
+}
+
+@mixin background-color($size:'', $states: ''){
+    @if $size == '' and $states == ''{
+        @each $color, $value in $palette-colors {
+            .bg-#{$color}{
+                --opacity-bg: #{$opacity-100};
+                background-color: rgba($value,var(--opacity-bg));
+            }
+        }
+        @each $color, $value in $status-colors {
+            .bg-#{$color}{
+                --opacity-bg: #{$opacity-100};
+                background-color: rgba($value,var(--opacity-bg));
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            @each $color, $value in $palette-colors {
+                .bg-#{$color}\:#{$state}:#{$state}{
+                    --opacity-bg: #{$opacity-100};
+                    background-color: rgba($value,var(--opacity-bg));
+                }
+            }
+            @each $color, $value in $status-colors {
+                .bg-#{$color}\:#{$state}:#{$state}{
+                    --opacity-bg: #{$opacity-100};
+                    background-color: rgba($value,var(--opacity-bg));
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $color, $value in $palette-colors {
+            .#{$size}\:bg-#{$color}{
+                --opacity-bg: #{$opacity-100};
+                background-color: rgba($value,var(--opacity-bg));
+            }
+        }
+        @each $color, $value in $status-colors {
+            .#{$size}\:bg-#{$color}{
+                --opacity-bg: #{$opacity-100};
+                background-color: rgba($value,var(--opacity-bg));
+            }
+        }
+    }
+    @else {
+        @each $state in $states {
+            @each $color, $value in $palette-colors {
+                .#{$size}\:bg-#{$color}\:#{$state}:#{$state}{
+                    --opacity-bg: #{$opacity-100};
+                    background-color: rgba($value,var(--opacity-bg));
+                }
+            }
+            @each $color, $value in $status-colors {
+                .#{$size}\:bg-#{$color}\:#{$state}:#{$state}{
+                    --opacity-bg: #{$opacity-100};
+                    background-color: rgba($value,var(--opacity-bg));
+                }
+            }
+        }
+    }
+}
+
+@mixin background-opacity($size:'', $states: ''){
+    @if $size == '' and $states == ''{
+        @each $opacity, $value in $opacity-list {
+            .bg-#{$opacity}{
+                --opacity-bg: #{$value};
+            }
+        } 
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            @each $opacity, $value in $opacity-list {
+                .bg-#{$opacity}\:#{$state}:#{$state}{
+                    --opacity-bg: #{$value};
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $opacity, $value in $opacity-list {
+            .#{$size}\:bg-#{$opacity}{
+                --opacity-bg: #{$value};
+            }
+        }
+    }
+    @else {
+        @each $state in $states {
+            @each $opacity, $value in $opacity-list {
+                .#{$size}\:bg-#{$opacity}\:#{$state}:#{$state}{
+                    --opacity-bg: #{$value};
+                }
+            }
+        }
+    }
+}
+
+@mixin background-position($size:'', $states: ''){
+    @if $size == '' and $states == ''{
+        .bg-left-top{
+            background-position: left top;
+        }
+        .bg-top{
+            background-position: top;
+        }
+        .bg-right-top{
+            background-position: right top;
+        }
+        .bg-right{
+            background-position: right;
+        }
+        .bg-right-bottom{
+            background-position: right bottom;
+        }
+        .bg-bottom{
+            background-position: bottom;
+        }
+        .bg-left-bottom{
+            background-position: left bottom;
+        }
+        .bg-left{
+            background-position: left;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .bg-left-top\:#{$state}:#{$state}{
+                background-position: left top;
+            }
+            .bg-top\:#{$state}:#{$state}{
+                background-position: top;
+            }
+            .bg-right-top\:#{$state}:#{$state}{
+                background-position: right top;
+            }
+            .bg-right\:#{$state}:#{$state}{
+                background-position: right;
+            }
+            .bg-right-bottom\:#{$state}:#{$state}{
+                background-position: right bottom;
+            }
+            .bg-bottom\:#{$state}:#{$state}{
+                background-position: bottom;
+            }
+            .bg-left-bottom\:#{$state}:#{$state}{
+                background-position: left bottom;
+            }
+            .bg-left\:#{$state}:#{$state}{
+                background-position: left;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:bg-left-top{
+            background-position: left top;
+        }
+        .#{$size}\:bg-top{
+            background-position: top;
+        }
+        .#{$size}\:bg-right-top{
+            background-position: right top;
+        }
+        .#{$size}\:bg-right{
+            background-position: right;
+        }
+        .#{$size}\:bg-right-bottom{
+            background-position: right bottom;
+        }
+        .#{$size}\:bg-bottom{
+            background-position: bottom;
+        }
+        .#{$size}\:bg-left-bottom{
+            background-position: left bottom;
+        }
+        .#{$size}\:bg-left{
+            background-position: left;
+        }
+    }
+    @else {
+        @each $state in $states {
+            .#{$size}\:bg-left-top\:#{$state}:#{$state}{
+                background-position: left top;
+            }
+            .#{$size}\:bg-top\:#{$state}:#{$state}{
+                background-position: top;
+            }
+            .#{$size}\:bg-right-top\:#{$state}:#{$state}{
+                background-position: right top;
+            }
+            .#{$size}\:bg-right\:#{$state}:#{$state}{
+                background-position: right;
+            }
+            .#{$size}\:bg-right-bottom\:#{$state}:#{$state}{
+                background-position: right bottom;
+            }
+            .#{$size}\:bg-bottom\:#{$state}:#{$state}{
+                background-position: bottom;
+            }
+            .#{$size}\:bg-left-bottom\:#{$state}:#{$state}{
+                background-position: left bottom;
+            }
+            .#{$size}\:bg-left\:#{$state}:#{$state}{
+                background-position: left;
+            }
+        }
+    }
+}
+
+@mixin background-repeat($size:'', $states: ''){
+    @if $size == '' and $states == ''{
+        .bg-repeat{
+            background-repeat: repeat;
+        }
+        .bg-no-repeat{
+            background-repeat: no-repeat;
+        }
+        .bg-repeat-x{
+            background-repeat: repeat-x;
+        }
+        .bg-repeat-y{
+            background-repeat: repeat-y;
+        }
+        .bg-repeat-round{
+            background-repeat: round;
+        }
+        .bg-repeat-space{
+            background-repeat: space;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .bg-repeat\:#{$state}:#{$state}{
+                background-repeat: repeat;
+            }
+            .bg-no-repeat\:#{$state}:#{$state}{
+                background-repeat: no-repeat;
+            }
+            .bg-repeat-x\:#{$state}:#{$state}{
+                background-repeat: repeat-x;
+            }
+            .bg-repeat-y\:#{$state}:#{$state}{
+                background-repeat: repeat-y;
+            }
+            .bg-repeat-round\:#{$state}:#{$state}{
+                background-repeat: round;
+            }
+            .bg-repeat-space\:#{$state}:#{$state}{
+                background-repeat: space;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:bg-repeat{
+            background-repeat: repeat;
+        }
+        .#{$size}\:bg-no-repeat{
+            background-repeat: no-repeat;
+        }
+        .#{$size}\:bg-repeat-x{
+            background-repeat: repeat-x;
+        }
+        .#{$size}\:bg-repeat-y{
+            background-repeat: repeat-y;
+        }
+        .#{$size}\:bg-repeat-round{
+            background-repeat: round;
+        }
+        .#{$size}\:bg-repeat-space{
+            background-repeat: space;
+        }
+    }
+    @else {
+        @each $state in $states {
+            .#{$size}\:bg-repeat\:#{$state}:#{$state}{
+                background-repeat: repeat;
+            }
+            .#{$size}\:bg-no-repeat\:#{$state}:#{$state}{
+                background-repeat: no-repeat;
+            }
+            .#{$size}\:bg-repeat-x\:#{$state}:#{$state}{
+                background-repeat: repeat-x;
+            }
+            .#{$size}\:bg-repeat-y\:#{$state}:#{$state}{
+                background-repeat: repeat-y;
+            }
+            .#{$size}\:bg-repeat-round\:#{$state}:#{$state}{
+                background-repeat: round;
+            }
+            .#{$size}\:bg-repeat-space\:#{$state}:#{$state}{
+                background-repeat: space;
+            }
+        }
+    }
+}
+
+@mixin background-size($size:'', $states: ''){
+    @if $size == '' and $states == ''{
+        .bg-size-auto{
+            background-size: auto;
+        }
+        .bg-size-cover{
+            background-size: cover;
+        }
+        .bg-size-contain{
+            background-size: contain;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .bg-size-auto\:#{state}:#{$state}{
+                background-size: auto;
+            }
+            .bg-size-cover\:#{state}:#{$state}{
+                background-size: cover;
+            }
+            .bg-size-contain\:#{state}:#{$state}{
+                background-size: contain;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:bg-size-auto{
+            background-size: auto;
+        }
+        .#{$size}\:bg-size-cover{
+            background-size: cover;
+        }
+        .#{$size}\:bg-size-contain{
+            background-size: contain;
+        }
+    }
+    @else {
+        @each $state in $states {
+            .#{$size}\:bg-size-auto\:#{state}:#{$state}{
+                background-size: auto;
+            }
+            .#{$size}\:bg-size-cover\:#{state}:#{$state}{
+                background-size: cover;
+            }
+            .#{$size}\:bg-size-contain\:#{state}:#{$state}{
+                background-size: contain;
+            }
+        }
+    }
+}
+
+

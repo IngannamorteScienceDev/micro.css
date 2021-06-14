@@ -1,0 +1,254 @@
+@mixin width($size: '', $states: ''){
+    @if $size == '' and $states == ''{
+        @each $width,$value in $widths{
+            .w-#{$width}{
+                width: #{$value};
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states{
+            @each $width,$value in $widths{
+                .w-#{$width}\:#{$state}:#{$state}{
+                    width: #{$value};
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $width,$value in $widths{
+            .#{$size}\:w-#{$width}{
+                width: #{$value};
+            }
+        }
+    }
+    @else{
+        @each $state in $states{
+            @each $width,$value in $widths{
+                .#{$size}\:w-#{$width}\:#{$state}:#{$state}{
+                    width: #{$value}
+                }
+            }
+        }
+    }
+}
+
+@mixin min-width($size: '', $states: ''){
+    @if $size == '' and $states == ''{
+        .min-w-0{
+            min-width: 0px;  
+        }
+        .min-w-full{
+            min-width: 100%;
+        }
+        .min-w-min{
+            min-width: min-content;
+        }
+        .min-w-max{
+            min-width: max-content;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states{
+            .min-w-0\:#{$state}:#{$state}{
+                min-width: 0px;  
+            }
+            .min-w-full\:#{$state}:#{$state}{
+                min-width: 100%;
+            }
+            .min-w-min\:#{$state}:#{$state}{
+                min-width: min-content;
+            }
+            .min-w-max\:#{$state}:#{$state}{
+                min-width: max-content;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:min-w-0{
+            min-width: 0px;  
+        }
+        .#{$size}\:min-w-full{
+            min-width: 100%;
+        }
+        .#{$size}\:min-w-min{
+            min-width: min-content;
+        }
+        .#{$size}\:min-w-max{
+            min-width: max-content;
+        }
+    }
+    @else{
+        @each $state in $states{
+            .#{$state}\:min-w-0\:#{$state}:#{$state}{
+                min-width: 0px;  
+            }
+            .#{$state}\:min-w-full\:#{$state}:#{$state}{
+                min-width: 100%;
+            }
+            .#{$state}\:min-w-min\:#{$state}:#{$state}{
+                min-width: min-content;
+            }
+            .#{$state}\:min-w-max\:#{$state}:#{$state}{
+                min-width: max-content;
+            }
+        }
+    }
+}
+
+@mixin max-width($size: '', $states: ''){
+    @if $size == '' and $states == ''{
+        @each $width,$value in $max-widths{
+            .max-w-#{$width}{
+                max-width: #{$value};
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states{
+            @each $width,$value in $max-widths{
+                .max-w-#{$width}\:#{$state}:#{$state}{
+                    max-width: #{$value};
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $width,$value in $max-widths{
+            .#{$size}\:max-w-#{$width}{
+                max-width: #{$value};
+            }
+        }
+    }
+    @else{
+        @each $state in $states{
+            @each $width,$value in $widths{
+                .#{$size}\:max-w-#{$width}\:#{$state}:#{$state}{
+                    max-width: #{$value}
+                }
+            }
+        }
+    }
+}
+
+@mixin height($size: '', $states: ''){
+    @if $size == '' and $states == ''{
+        @each $height,$value in $heights{
+            .h-#{$height}{
+                height: #{$value};
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states{
+            @each $height,$value in $heights {
+                .h-#{$height}\:#{$state}:#{$state}{
+                    height: #{$value};
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $height,$value in $heights{
+            .#{$size}\:h-#{$height}{
+                height: #{$value};
+            }
+        }
+    }
+    @else{
+        @each $state in $states{
+            @each $height,$value in $heights{
+                .#{$size}\:h-#{$height}\:#{$state}:#{$state}{
+                    height: #{$value}
+                }
+            }
+        }
+    }
+}
+
+@mixin min-height($size: '', $states: ''){
+    @if $size == '' and $states == ''{
+        .min-h-0{
+            min-height: 0px;  
+        }
+        .min-h-full{
+            min-height: 100%;
+        }
+        .min-h-screen{
+            min-height: 100vh;
+        }
+        
+    }
+    @else if $size == ''{
+        @each $state in $states{
+            .min-h-0\:#{$state}:#{$state}{
+                min-height: 0px;  
+            }
+            .min-h-full\:#{$state}:#{$state}{
+                min-height: 100%;
+            }
+            .min-h-screen\:#{$state}:#{$state}{
+                min-height: 100vh;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:min-h-0{
+            min-height: 0px;  
+        }
+        .#{$size}\:min-h-full{
+            min-height: 100%;
+        }
+        .#{$size}\:min-h-screen{
+            min-height: 100vh;
+        }
+    }
+    @else{
+        @each $state in $states{
+            .#{$size}\:min-h-0\:#{$state}:#{$state}{
+                min-height: 0px;  
+            }
+            .#{$size}\:min-h-full\:#{$state}:#{$state}{
+                min-height: 100%;
+            }
+            .#{$size}\:min-h-screen\:#{$state}:#{$state}{
+                min-height: 100vh;
+            }
+        }
+    }
+}
+
+@mixin max-height($size: '', $states: ''){
+    @if $size == '' and $states == ''{
+        @each $height,$value in $max-heights{
+            .max-h-#{$height}{
+                max-height: #{$value};
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states{
+            @each $height,$value in $max-heights{
+                .max-h-#{$height}\:#{$state}:#{$state}{
+                    max-height: #{$value};
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $height,$value in $max-heights{
+            .#{$size}\:max-h-#{$height}{
+                max-height: #{$value};
+            }
+        }
+    }
+    @else{
+        @each $state in $states{
+            @each $height,$value in $heights{
+                .#{$size}\:max-h-#{$height}\:#{$state}:#{$state}{
+                    max-height: #{$value};
+                }
+            }
+        }
+    }
+}

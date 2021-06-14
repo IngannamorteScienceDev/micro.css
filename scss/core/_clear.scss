@@ -1,0 +1,74 @@
+@mixin clear($size: '', $states: ''){
+    @if $size == '' and $states == ''{
+        .clear-left{
+            clear: left;
+        }
+
+        .clear-right{
+            clear: right;
+        }
+        
+        .clear-both{
+            clear: both;
+        }
+
+        .clear-none{
+            clear: none;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states{
+            .clear-left\:#{$state}:#{$state}{
+                clear: left;
+            }
+
+            .clear-right\:#{$state}:#{$state}{
+                clear: right;
+            }
+            
+            .clear-both\:#{$state}:#{$state}{
+                clear: both;
+            }
+
+            .clear-non\:#{$state}:#{$state}{
+                clear: none;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:clear-left{
+            clear: left;
+        }
+
+        .#{$size}\:clear-right{
+            clear: right;
+        }
+        
+        .#{$size}\:clear-both{
+            clear: both;
+        }
+
+        .#{$size}\:clear-none{
+            clear: none;
+        }
+    }
+    @else {
+        @each $state in $states{
+            .#{$size}\:clear-left\:#{$state}:#{$state} {
+                clear: left;
+            }
+
+            .#{$size}\:clear-right\:#{$state}:#{$state}{
+                clear: right;
+            }
+            
+            .#{$size}\:clear-both\:#{$state}:#{$state}{
+                clear: both;
+            }
+
+            .#{$size}\:clear-none\:#{$state}:#{$state}{
+                clear: none;
+            }
+        }
+    }
+}

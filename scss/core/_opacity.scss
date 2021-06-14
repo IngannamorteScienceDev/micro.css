@@ -1,0 +1,34 @@
+@mixin opacity($size: '', $states: '') {
+    @if $size == '' and $states == '' {
+        @each $key, $value in $opacity-list {
+            .#{$key}{
+                opacity: #{$value};
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            @each $key, $value in $opacity-list {
+                .#{$key}\:#{$state}:#{$state}{
+                    opacity: #{$value};
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $key, $value in $opacity-list {
+            .#{$size}\:#{$key}{
+                opacity: #{$value};
+            }
+        }
+    }
+    @else{
+        @each $state in $states {
+            @each $key, $value in $opacity-list {
+                .#{$size}\:#{$key}\:#{$state}:#{$state}{
+                    opacity: #{$value};
+                }
+            }
+        }
+    }
+}

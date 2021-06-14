@@ -1,0 +1,162 @@
+@mixin padding($size: '', $states: ''){
+    @if $size == '' and $states == ''{
+        @each $space,$value in $spacing{
+            .p-#{$space}{
+                padding: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .py-#{$space}{
+                padding-top: #{$value};
+                padding-bottom: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .px-#{$space}{
+                padding-left: #{$value};
+                padding-right: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .pt-#{$space}{
+                padding-top: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .pr-#{$space}{
+                padding-right: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .pb-#{$space}{
+                padding-bottom: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .pl-#{$space}{
+                padding-left: #{$value};
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states{
+            @each $space,$value in $spacing{
+                .p-#{$space}\:#{$state}:#{$state}{
+                    padding: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .py-#{$space}\:#{$state}:#{$state}{
+                    padding-top: #{$value};
+                    padding-bottom: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .px-#{$space}\:#{$state}:#{$state}{
+                    padding-left: #{$value};
+                    padding-right: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .pt-#{$space}\:#{$state}:#{$state}{
+                    padding-top: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .pr-#{$space}\:#{$state}:#{$state}{
+                    padding-right: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .pb-#{$space}\:#{$state}:#{$state}{
+                    padding-bottom: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .pl-#{$space}\:#{$state}:#{$state}{
+                    padding-left: #{$value};
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $space,$value in $spacing{
+            .#{$size}\:p-#{$space}{
+                padding: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .#{$size}\:py-#{$space}{
+                padding-top: #{$value};
+                padding-bottom: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .#{$size}\:px-#{$space}{
+                padding-left: #{$value};
+                padding-right: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .#{$size}\:pt-#{$space}{
+                padding-top: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .#{$size}\:pr-#{$space}{
+                padding-right: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .#{$size}\:pb-#{$space}{
+                padding-bottom: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .#{$size}\:pl-#{$space}{
+                padding-left: #{$value};
+            }
+        }
+    }
+    @else{
+        @each $state in $states{
+            @each $space,$value in $spacing{
+                .#{$size}\:p-#{$space}\:#{$state}:#{$state}{
+                    padding: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .#{$size}\:py-#{$space}\:#{$state}:#{$state}{
+                    padding-top: #{$value};
+                    padding-bottom: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .#{$size}\:px-#{$space}\:#{$state}:#{$state}{
+                    padding-left: #{$value};
+                    padding-right: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .#{$size}\:pt-#{$space}\:#{$state}:#{$state}{
+                    padding-top: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .#{$size}\:pr-#{$space}\:#{$state}:#{$state}{
+                    padding-right: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .#{$size}\:pb-#{$space}\:#{$state}:#{$state}{
+                    padding-bottom: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .#{$size}\:pl-#{$space}\:#{$state}:#{$state}{
+                    padding-left: #{$value};
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,154 @@
+@mixin overscroll($size: '', $states: ''){
+    @if $size == '' and $states == ''{
+        .overscroll-auto{
+            overscroll-behavior: auto;
+        }
+
+        .overscroll-contain{
+            overscroll-behavior: contain;
+        }
+
+        .overscroll-none{
+            overscroll-behavior: none;
+        }
+
+        .overscroll-y-auto{
+            overscroll-behavior-y: auto;
+        }
+
+        .overscroll-y-contain{
+            overscroll-behavior-y: contain;
+        }
+
+        .overscroll-y-none{
+            overscroll-behavior-y: none;
+        }
+
+        .overscroll-x-auto{
+            overscroll-behavior-x: autp;
+        }
+
+        .overscroll-x-contain{
+            overscroll-behavior-x: contain;
+        }
+
+        .overscroll-x-none{
+            overscroll-behavior-x: none;
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states {
+            .overscroll-auto\:#{$state}:#{$state}{
+                overscroll-behavior: auto;
+            }
+    
+            .overscroll-contain\:#{$state}:#{$state}{
+                overscroll-behavior: contain;
+            }
+    
+            .overscroll-none\:#{$state}:#{$state}{
+                overscroll-behavior: none;
+            }
+    
+            .overscroll-y-auto\:#{$state}:#{$state}{
+                overscroll-behavior-y: auto;
+            }
+    
+            .overscroll-y-contain\:#{$state}:#{$state}{
+                overscroll-behavior-y: contain;
+            }
+    
+            .overscroll-y-none\:#{$state}:#{$state}{
+                overscroll-behavior-y: none;
+            }
+    
+            .overscroll-x-auto\:#{$state}:#{$state}{
+                overscroll-behavior-x: autp;
+            }
+    
+            .overscroll-x-contain\:#{$state}:#{$state}{
+                overscroll-behavior-x: contain;
+            }
+    
+            .overscroll-x-none\:#{$state}:#{$state}{
+                overscroll-behavior-x: none;
+            }
+        }
+    }
+    @else if $states == ''{
+        .#{$size}\:overscroll-auto{
+            overscroll-behavior: auto;
+        }
+
+        .#{$size}\:overscroll-contain{
+            overscroll-behavior: contain;
+        }
+
+        .#{$size}\:overscroll-none{
+            overscroll-behavior: none;
+        }
+
+        .#{$size}\:overscroll-y-auto{
+            overscroll-behavior-y: auto;
+        }
+
+        .#{$size}\:overscroll-y-contain{
+            overscroll-behavior-y: contain;
+        }
+
+        .#{$size}\:overscroll-y-none{
+            overscroll-behavior-y: none;
+        }
+
+        .#{$size}\:overscroll-x-auto{
+            overscroll-behavior-x: autp;
+        }
+
+        .#{$size}\:overscroll-x-contain{
+            overscroll-behavior-x: contain;
+        }
+
+        .#{$size}\:overscroll-x-none{
+            overscroll-behavior-x: none;
+        }
+    }
+    @else{
+        @each $state in $states {
+            .#{$size}\:overscroll-auto\:#{$state}:#{$state}{
+                overscroll-behavior: auto;
+            }
+    
+            .#{$size}\:overscroll-contain\:#{$state}:#{$state}{
+                overscroll-behavior: contain;
+            }
+    
+            .#{$size}\:overscroll-none\:#{$state}:#{$state}{
+                overscroll-behavior: none;
+            }
+    
+            .#{$size}\:overscroll-y-auto\:#{$state}:#{$state}{
+                overscroll-behavior-y: auto;
+            }
+    
+            .#{$size}\:overscroll-y-contain\:#{$state}:#{$state}{
+                overscroll-behavior-y: contain;
+            }
+    
+            .#{$size}\:overscroll-y-none\:#{$state}:#{$state}{
+                overscroll-behavior-y: none;
+            }
+    
+            .#{$size}\:overscroll-x-auto\:#{$state}:#{$state}{
+                overscroll-behavior-x: autp;
+            }
+    
+            .#{$size}\:overscroll-x-contain\:#{$state}:#{$state}{
+                overscroll-behavior-x: contain;
+            }
+    
+            .#{$size}\:overscroll-x-none\:#{$state}:#{$state}{
+                overscroll-behavior-x: none;
+            }
+        }
+    }
+}

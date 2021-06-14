@@ -1,0 +1,342 @@
+@mixin margin($size: '', $states: ''){
+    @if $size == '' and $states == ''{
+        @each $space,$value in $spacing{
+            .m-#{$space}{
+                margin: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .n-m-#{$space}{
+                margin: -#{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .my-#{$space}{
+                margin-top: #{$value};
+                margin-bottom: #{$value};
+            }
+        }
+        .my-auto{
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+        @each $space,$value in $spacing{
+            .n-my-#{$space}{
+                margin-top: -#{$value};
+                margin-bottom: -#{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .mx-#{$space}{
+                margin-left: #{$value};
+                margin-right: #{$value};
+            }
+        }
+        .mx-auto{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @each $space,$value in $spacing{
+            .n-mx-#{$space}{
+                margin-left: -#{$value};
+                margin-right: -#{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .mt-#{$space}{
+                margin-top: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .n-mt-#{$space}{
+                margin-top: -#{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .mr-#{$space}{
+                margin-right: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .n-mr-#{$space}{
+                margin-right: -#{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .mb-#{$space}{
+                margin-bottom: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .n-mb-#{$space}{
+                margin-bottom: -#{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .ml-#{$space}{
+                margin-left: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .n-ml-#{$space}{
+                margin-left: -#{$value};
+            }
+        }
+    }
+    @else if $size == ''{
+        @each $state in $states{
+            @each $space,$value in $spacing{
+                .m-#{$space}\:#{$state}:#{$state}{
+                    margin: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .n-m-#{$space}\:#{$state}:#{$state}{
+                    margin: -#{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .my-#{$space}\:#{$state}:#{$state}{
+                    margin-top: #{$value};
+                    margin-bottom: #{$value};
+                }
+            }
+            .my-auto\:#{$state}:#{$state}{
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+            @each $space,$value in $spacing{
+                .n-my-#{$space}\:#{$state}:#{$state}{
+                    margin-top: -#{$value};
+                    margin-bottom: -#{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .mx-#{$space}\:#{$state}:#{$state}{
+                    margin-left: #{$value};
+                    margin-right: #{$value};
+                }
+            }
+            .mx-auto\:#{$state}:#{$state}{
+                margin-left: auto;
+                margin-right: auto;
+            }
+            @each $space,$value in $spacing{
+                .n-mx-#{$space}\:#{$state}:#{$state}{
+                    margin-left: -#{$value};
+                    margin-right: -#{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .mt-#{$space}\:#{$state}:#{$state}{
+                    margin-top: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .n-mt-#{$space}\:#{$state}:#{$state}{
+                    margin-top: -#{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .mr-#{$space}\:#{$state}:#{$state}{
+                    margin-right: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .n-mr-#{$space}\:#{$state}:#{$state}{
+                    margin-right: -#{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .mb-#{$space}\:#{$state}:#{$state}{
+                    margin-bottom: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .n-mb-#{$space}\:#{$state}:#{$state}{
+                    margin-bottom: -#{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .ml-#{$space}\:#{$state}:#{$state}{
+                    margin-left: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .n-ml-#{$space}\:#{$state}:#{$state}{
+                    margin-left: -#{$value};
+                }
+            }
+        }
+    }
+    @else if $states == ''{
+        @each $space,$value in $spacing{
+            .#{$size}\:m-#{$space}{
+                margin: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .#{$size}\:n-m-#{$space}{
+                margin: -#{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .#{$size}\:my-#{$space}{
+                margin-top: #{$value};
+                margin-bottom: #{$value};
+            }
+        }
+        .#{$size}\:my-auto{
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+        @each $space,$value in $spacing{
+            .#{$size}\:n-my-#{$space}{
+                margin-top: -#{$value};
+                margin-bottom: -#{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .#{$size}\:mx-#{$space}{
+                margin-left: #{$value};
+                margin-right: #{$value};
+            }
+        }
+        .#{$size}\:mx-auto{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @each $space,$value in $spacing{
+            .#{$size}\:n-mx-#{$space}{
+                margin-left: -#{$value};
+                margin-right: -#{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .#{$size}\:mt-#{$space}{
+                margin-top: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .#{$size}\:n-mt-#{$space}{
+                margin-top: -#{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .#{$size}\:mr-#{$space}{
+                margin-right: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .#{$size}\:n-mr-#{$space}{
+                margin-right: -#{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .#{$size}\:mb-#{$space}{
+                margin-bottom: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .#{$size}\:n-mb-#{$space}{
+                margin-bottom: -#{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .#{$size}\:ml-#{$space}{
+                margin-left: #{$value};
+            }
+        }
+        @each $space,$value in $spacing{
+            .#{$size}\:n-ml-#{$space}{
+                margin-left: -#{$value};
+            }
+        }
+    }
+    @else{
+        @each $state in $states{
+            @each $space,$value in $spacing{
+                .#{$size}\:m-#{$space}\:#{$state}:#{$state}{
+                    margin: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .#{$size}\:n-m-#{$space}\:#{$state}:#{$state}{
+                    margin: -#{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .#{$size}\:my-#{$space}\:#{$state}:#{$state}{
+                    margin-top: #{$value};
+                    margin-bottom: #{$value};
+                }
+            }
+            .#{$size}\:my-auto\:#{$state}:#{$state}{
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+            @each $space,$value in $spacing{
+                .#{$size}\:n-my-#{$space}\:#{$state}:#{$state}{
+                    margin-top: -#{$value};
+                    margin-bottom: -#{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .#{$size}\:mx-#{$space}\:#{$state}:#{$state}{
+                    margin-left: #{$value};
+                    margin-right: #{$value};
+                }
+            }
+            .#{$size}\:mx-auto\:#{$state}:#{$state}{
+                margin-left: auto;
+                margin-right: auto;
+            }
+            @each $space,$value in $spacing{
+                .#{$size}\:n-mx-#{$space}\:#{$state}:#{$state}{
+                    margin-left: -#{$value};
+                    margin-right: -#{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .#{$size}\:mt-#{$space}\:#{$state}:#{$state}{
+                    margin-top: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .#{$size}\:n-mt-#{$space}\:#{$state}:#{$state}{
+                    margin-top: -#{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .#{$size}\:mr-#{$space}\:#{$state}:#{$state}{
+                    margin-right: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .#{$size}\:n-mr-#{$space}\:#{$state}:#{$state}{
+                    margin-right: -#{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .#{$size}\:mb-#{$space}\:#{$state}:#{$state}{
+                    margin-bottom: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .#{$size}\:n-mb-#{$space}\:#{$state}:#{$state}{
+                    margin-bottom: -#{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .#{$size}\:ml-#{$space}\:#{$state}:#{$state}{
+                    margin-left: #{$value};
+                }
+            }
+            @each $space,$value in $spacing{
+                .#{$size}\:n-ml-#{$space}\:#{$state}:#{$state}{
+                    margin-left: -#{$value};
+                }
+            }
+        }
+    }
+}
